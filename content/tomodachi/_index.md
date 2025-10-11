@@ -12,14 +12,14 @@ layoutBackgroundHeaderSpace: false
 cardViewScreenWidth: false
 showComments: true
 ---
-# This site
+## For This site
+(application is acceptable)
 
 ## Name
 Dahi Blog
 
 ## Avatar
 [https://oxs.dahi.icu/pic/avatar.png](https://oxs.dahi.icu/pic/avatar.png)
-or [https://s1.ax1x.com/2023/08/01/pP9zpXd.png](https://s1.ax1x.com/2023/08/01/pP9zpXd.png)（Backup）
 
 ## Link
 [https://dahi.icu/](https://dahi.icu/)
@@ -29,6 +29,8 @@ or [https://s1.ax1x.com/2023/08/01/pP9zpXd.png](https://s1.ax1x.com/2023/08/01/p
 
 ## Email
 dahiicu@gmail.com
+
+
 
 <script src="https://giscus.app/client.js"
         data-repo="dahisea/Blog_Archive_U_Comment"
