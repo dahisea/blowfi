@@ -7,9 +7,7 @@ showComments: true
 # 爱发电
 https://afdian.tv/a/dahia
 
-
-以下不使用
-# ETH 
+# ERC20
 0xAF81630F672d5feb9BDd4EFc9d844f02bc2C7F35
 
 # BTC
