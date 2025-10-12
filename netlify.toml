@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo mod get github.com/nunocoracao/blowfish/v2@main && hugo --gc --minify"
+command = "hugo mod get github.com/nunocoracao/blowfish/v2@v2.90.0 && hugo --gc --minify"
 
 [build.environment]
 HUGO_VERSION = "0.148.0"
