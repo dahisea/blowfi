@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "build": "./node_modules/.bin/hugo --gc --minify",
-    "postinstall": "git submodule update --init && hugo mod get github.com/nunocoracao/blowfish/v2@v2.90.0",
-    "dev": "hugo server -D",
+    "postinstall": "git submodule update --init",
+    "dev": "hugo mod get github.com/nunocoracao/blowfish/v2@v2.90.0 && hugo server -D",
     "clean": "rm -rf public",
-    "preview": "hugo server"
+    "preview": "hugo mod get github.com/nunocoracao/blowfish/v2@v2.90.0 && hugo server"
   },
   "dependencies": {
     "hugo-extended": "^0.148.0"
