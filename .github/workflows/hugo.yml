@@ -46,6 +46,8 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Install Theme
+        run: git submodule add https://github.com/nunocoracao/blowfish.git themes/blowfish && git submodule update --init
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
