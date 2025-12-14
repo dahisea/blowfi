@@ -35,13 +35,10 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/" # used as default for f
   showScrollToTop = true
 
 [homepage]
-  layout = "background" # valid options: page, profile, hero, card, background, custom
-  showRecent = true
-  showRecentItems = 10
+  layout = "background"
   showMoreLink = true
   showMoreLinkDest = "/posts"
   cardView = false
-  cardViewScreenWidth = false
   layoutBackgroundBlur = false # only used when layout equals background
 
 [article]
