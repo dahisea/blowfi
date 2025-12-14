@@ -22,7 +22,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.128.0
+      HUGO_VERSION: 0.152.2  # 已升级到此版本
     steps:
       - name: Install Hugo CLI
         run: |
@@ -37,7 +37,7 @@ jobs:
         with:
           submodules: recursive
       
-      - name: Install Theme (if not exists)
+      - name: Install Theme (if not exists)  # 优化保留：仅当主题不存在时下载
         run: |
           if [ ! -d "themes/blowfish" ]; then
             git submodule add https://github.com/nunocoracao/blowfish.git themes/blowfish
