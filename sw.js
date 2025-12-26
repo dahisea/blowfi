@@ -1,0 +1,1 @@
+const C="my-site-cache-v1",U=["/"];self.addEventListener("install",e=>{e.waitUntil(caches.open(C).then(e=>e.addAll(U))}),self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(e=>Promise.all(e.map(e=>e!==C&&caches.delete(e)))))}),self.addEventListener("fetch",e=>{e.respondWith(caches.match(e.request).then(e=>e||fetch(e.request)))});
