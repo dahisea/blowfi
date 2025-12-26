@@ -1,7 +1,7 @@
 ---
 title: "Tavre Blog"
-tags: [茫茫大海 我与你相遇]
-externalUrl: "https://blog.tsd.my/"
+tags: [茫茫人海 我与你相遇]
+externalUrl: "https://blog.tavr.top/"
 weight: 8
 showDate: false
 showAuthor: false
