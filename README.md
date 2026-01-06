@@ -1,6 +1,4 @@
-# Blog of Tech Sharing
-![code-size](https://img.shields.io/github/languages/code-size/dahisea/blowfi)
-- Code size.
+# Blog of Tech Sharing ![code-size](https://img.shields.io/github/languages/code-size/dahisea/blowfi)
 ![sponsor](https://vps.town/static/images/sponsor.png)
 - 本站点及其附属网络服务内容由 **VPS.Town** 提供赞助。
 VPS.Town 是 喵云 的海外云计算品牌，由苏州易松信息技术有限公司（Suzhou Yesong Information Technology Co., Ltd.）运营。
