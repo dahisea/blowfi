@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudflare on ダヒの世界</title><link>/zh-sg/tags/cloudflare/</link><description>Recent content in Cloudflare on ダヒの世界</description><generator>Hugo -- gohugo.io</generator><language>zh-SG</language><copyright>© 2026</copyright><lastBuildDate>Sun, 01 Jun 2025 03:25:04 +0000</lastBuildDate><atom:link href="/zh-sg/tags/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>2025年中國內地 Cloudflare DNS over HTTPS (DoH) 使用教程</title><link>/zh-sg/posts/cloudflare-dns-any/</link><pubDate>Sun, 01 Jun 2025 03:25:04 +0000</pubDate><guid>/zh-sg/posts/cloudflare-dns-any/</guid><description>&lt;h1 class="relative group"&gt;Cloudflare DNS over HTTPS （DoH） 使用教程
+ &lt;div id="cloudflare-dns-over-https-doh-使用教程" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloudflare-dns-over-https-doh-%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+&lt;p&gt;Cloudflare 提供多种 DNS over HTTPS （DoH） 服务端点，包括标准 DNS、家庭保护 DNS 和安全 DNS 服务。
+而其附带的诸如ECH等各种功能，似是禁忌乐章。
+以下是详细使用教程。 来自中国内地的报告显示，Cloudflare的部分DNS网域已被封锁。但是封的居然不是全局，离谱了，用子域名就行。看来是开了后门。&lt;/p&gt;</description></item><item><title>Cloudflare 安全规则，防机器人和扫描，防黑AS</title><link>/zh-sg/posts/cloudflare-waf-r/</link><pubDate>Sun, 01 Jun 2025 00:25:04 +0000</pubDate><guid>/zh-sg/posts/cloudflare-waf-r/</guid><description>&lt;h1 class="relative group"&gt;我的三个Cloudflare WAF安全规则
+ &lt;div id="我的三个cloudflare-waf安全规则" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%88%91%e7%9a%84%e4%b8%89%e4%b8%aacloudflare-waf%e5%ae%89%e5%85%a8%e8%a7%84%e5%88%99" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+
+&lt;h2 class="relative group"&gt;前言
+ &lt;div id="前言" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%89%8d%e8%a8%80" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;在运营网站的过程中，Web应用防火墙(WAF)是保护站点安全的重要工具。今天我将发布两个在Cloudflare的WAF规则，希望能帮助到有需要的站长。&lt;/p&gt;</description></item><item><title>OpenWrt 上 Cloudflare DDNS 设置步骤教学</title><link>/zh-sg/posts/openwrt-cf-ddns/</link><pubDate>Thu, 01 Aug 2024 10:25:04 +0000</pubDate><guid>/zh-sg/posts/openwrt-cf-ddns/</guid><description>&lt;h2 class="relative group"&gt;📌 Cloudflare DDNS 设置步骤
+ &lt;div id="-cloudflare-ddns-设置步骤" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#-cloudflare-ddns-%e8%ae%be%e7%bd%ae%e6%ad%a5%e9%aa%a4" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+
+&lt;h3 class="relative group"&gt;1. 检查 DDNS 服务是否支持 Cloudflare
+ &lt;div id="1-检查-ddns-服务是否支持-cloudflare" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-%e6%a3%80%e6%9f%a5-ddns-%e6%9c%8d%e5%8a%a1%e6%98%af%e5%90%a6%e6%94%af%e6%8c%81-cloudflare" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;在 OpenWrt 的 DDNS 设置中，确认是否有「cloudflare.com-v4」选项：&lt;/p&gt;</description></item></channel></rss>

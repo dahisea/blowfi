@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>路由 on Dahi Open Tech</title><link>/tags/%E8%B7%AF%E7%94%B1/</link><description>Recent content in 路由 on Dahi Open Tech</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Fri, 19 May 2023 01:25:04 +0000</lastBuildDate><atom:link href="/tags/%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>小米路由器4A千兆版最新款（r4av2）Openwrt刷入教程</title><link>/posts/mi-r4av2-openwrt-flash/</link><pubDate>Fri, 19 May 2023 01:25:04 +0000</pubDate><guid>/posts/mi-r4av2-openwrt-flash/</guid><description>&lt;h3 class="relative group"&gt;&lt;strong&gt;2023 小米路由器 4A 千兆版 （r4av2） OpenWrt 刷機完整教程&lt;/strong&gt;
+ &lt;div id="2023-小米路由器-4a-千兆版-r4av2-openwrt-刷機完整教程" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#2023-%e5%b0%8f%e7%b1%b3%e8%b7%af%e7%94%b1%e5%99%a8-4a-%e5%8d%83%e5%85%86%e7%89%88-r4av2-openwrt-%e5%88%b7%e6%a9%9f%e5%ae%8c%e6%95%b4%e6%95%99%e7%a8%8b" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;** ⚠️ 注意：本教程適用於硬體版本 r4av2（固件版本 2.30.x），與舊版 r4a/r3gv2 不兼容！ **&lt;/p&gt;</description></item></channel></rss>

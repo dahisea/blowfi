@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dns on ダヒの世界</title><link>/zh-sg/tags/dns/</link><description>Recent content in Dns on ダヒの世界</description><generator>Hugo -- gohugo.io</generator><language>zh-SG</language><copyright>© 2026</copyright><lastBuildDate>Sun, 01 Jun 2025 03:25:04 +0000</lastBuildDate><atom:link href="/zh-sg/tags/dns/index.xml" rel="self" type="application/rss+xml"/><item><title>2025年中國內地 Cloudflare DNS over HTTPS (DoH) 使用教程</title><link>/zh-sg/posts/cloudflare-dns-any/</link><pubDate>Sun, 01 Jun 2025 03:25:04 +0000</pubDate><guid>/zh-sg/posts/cloudflare-dns-any/</guid><description>&lt;h1 class="relative group"&gt;Cloudflare DNS over HTTPS （DoH） 使用教程
+ &lt;div id="cloudflare-dns-over-https-doh-使用教程" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloudflare-dns-over-https-doh-%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+&lt;p&gt;Cloudflare 提供多种 DNS over HTTPS （DoH） 服务端点，包括标准 DNS、家庭保护 DNS 和安全 DNS 服务。
+而其附带的诸如ECH等各种功能，似是禁忌乐章。
+以下是详细使用教程。 来自中国内地的报告显示，Cloudflare的部分DNS网域已被封锁。但是封的居然不是全局，离谱了，用子域名就行。看来是开了后门。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gal on Dahi Open Tech</title><link>/tags/gal/</link><description>Recent content in Gal on Dahi Open Tech</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Sat, 20 Apr 2024 09:25:04 +0000</lastBuildDate><atom:link href="/tags/gal/index.xml" rel="self" type="application/rss+xml"/><item><title>Tyranor模擬器Kirikiri字型大小設定</title><link>/posts/tjs-font-size/</link><pubDate>Sat, 20 Apr 2024 09:25:04 +0000</pubDate><guid>/posts/tjs-font-size/</guid><description>&lt;h2 class="relative group"&gt;patch.tjs
+ &lt;div id="patchtjs" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#patchtjs" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;System.setArgument(&amp;#34;-debugwin&amp;#34;,&amp;#34;no&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Plugins.link(&amp;#34;kirikiroid2.dll&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;with(Font) {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;global._origFontHeightProp = &amp;amp;.height;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;property hook_font_height {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;setter(v) { global._origFontHeightProp = v * 2.0; }
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;getter { return global._origFontHeightProp; }
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;amp;.height = &amp;amp;(hook_font_height incontextof null);
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description></item><item><title>Github與Git的電子信箱郵箱地址設置</title><link>/posts/github-git-email/</link><pubDate>Wed, 10 Apr 2024 01:25:04 +0000</pubDate><guid>/posts/github-git-email/</guid><description>&lt;p&gt;眾所周知，git的commit資訊往往包含信箱等數據，似乎官方不會主動處理開啟Private信箱帳號的git內容&lt;/p&gt;</description></item></channel></rss>

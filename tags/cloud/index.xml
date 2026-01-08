@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloud on Dahi Open Tech</title><link>/tags/cloud/</link><description>Recent content in Cloud on Dahi Open Tech</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Thu, 20 Jan 2022 03:25:04 +0000</lastBuildDate><atom:link href="/tags/cloud/index.xml" rel="self" type="application/rss+xml"/><item><title>CloudflareIP位址優選部份數據</title><link>/posts/cloudflare-ip-better/</link><pubDate>Thu, 20 Jan 2022 03:25:04 +0000</pubDate><guid>/posts/cloudflare-ip-better/</guid><description>&lt;p&gt;104.17.64.0 821.8 KB/s
+104.16.160.0 815.3 KB/s
+104.17.96.0 775.3 KB/s
+162.159.36.0 761.9 KB/s
+104.17.32.0 757.7 KB/s
+104.19.32.0 723.1 KB/s
+104.18.96.0 686.1 KB/s
+104.19.160.0 682.3 KB/s
+104.16.96.0 672.6 KB/s
+173.245.49.0 666.8 KB/s
+198.41.220.0 660.4 KB/s
+162.159.128.0 653.4 KB/s
+104.19.64.0 644.2 KB/s
+198.41.211.0 636.2 KB/s
+162.159.46.0 634.3 KB/s
+104.17.128.0 592.3 KB/s
+162.159.200.0 584.1 KB/s
+104.19.0.0 570.1 KB/s
+190.93.244.0 553.7 KB/s
+104.18.224.0 537.8 KB/s
+104.25.32.0 495.3 KB/s
+104.27.64.0 490.6 KB/s
+198.41.208.0 485.2 KB/s
+104.16.224.0 479.7 KB/s
+104.16.64.0 468.1 KB/s
+104.25.128.0 466.8 KB/s
+104.24.224.0 465.8 KB/s&lt;/p&gt;</description></item><item><title>Cloudflare出現1034錯誤</title><link>/posts/cloudflare1034/</link><pubDate>Tue, 20 Jul 2021 03:25:04 +0000</pubDate><guid>/posts/cloudflare1034/</guid><description>&lt;h3 class="relative group"&gt;&lt;strong&gt;Cloudflare 1034 錯誤詳解：網站管理員設定問題及解決方案&lt;/strong&gt;
+ &lt;div id="cloudflare-1034-錯誤詳解網站管理員設定問題及解決方案" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloudflare-1034-%e9%8c%af%e8%aa%a4%e8%a9%b3%e8%a7%a3%e7%b6%b2%e7%ab%99%e7%ae%a1%e7%90%86%e5%93%a1%e8%a8%ad%e5%ae%9a%e5%95%8f%e9%a1%8c%e5%8f%8a%e8%a7%a3%e6%b1%ba%e6%96%b9%e6%a1%88" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+
+&lt;h4 class="relative group"&gt;&lt;strong&gt;1. 1034 錯誤的根本原因&lt;/strong&gt;
+ &lt;div id="1-1034-錯誤的根本原因" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-1034-%e9%8c%af%e8%aa%a4%e7%9a%84%e6%a0%b9%e6%9c%ac%e5%8e%9f%e5%9b%a0" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h4&gt;
+&lt;p&gt;Cloudflare 的 &lt;strong&gt;Error 1034&lt;/strong&gt; 錯誤訊息 &lt;strong&gt;「此網站使用了與帳號身份不符的會員制 IP」&lt;/strong&gt;，通常是因為 &lt;strong&gt;網站管理員錯誤設定&lt;/strong&gt; 導致，具體表現為：&lt;/p&gt;</description></item></channel></rss>

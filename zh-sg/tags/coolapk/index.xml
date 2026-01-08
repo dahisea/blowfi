@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Coolapk on ダヒの世界</title><link>/zh-sg/tags/coolapk/</link><description>Recent content in Coolapk on ダヒの世界</description><generator>Hugo -- gohugo.io</generator><language>zh-SG</language><copyright>© 2026</copyright><lastBuildDate>Wed, 04 Jun 2025 09:25:04 +0000</lastBuildDate><atom:link href="/zh-sg/tags/coolapk/index.xml" rel="self" type="application/rss+xml"/><item><title>分析一个两年前发现的酷安社区漏洞，无视图片外链域限制发帖</title><link>/zh-sg/posts/coolapk-any-pic/</link><pubDate>Wed, 04 Jun 2025 09:25:04 +0000</pubDate><guid>/zh-sg/posts/coolapk-any-pic/</guid><description>&lt;h2 class="relative group"&gt;发帖原因
+ &lt;div id="发帖原因" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%91%e5%b8%96%e5%8e%9f%e5%9b%a0" aria-label="锚点"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;起因是我昨天在L站发帖发现引用我的图床出错了（我全站有反机器人规则）。然后突然想起来了这个酷安漏洞，&lt;strong&gt;不知道&lt;/strong&gt;现在还有没有。&lt;/p&gt;</description></item></channel></rss>

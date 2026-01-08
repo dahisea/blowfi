@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Waf on Dahi Open Tech</title><link>/tags/waf/</link><description>Recent content in Waf on Dahi Open Tech</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Sun, 01 Jun 2025 00:25:04 +0000</lastBuildDate><atom:link href="/tags/waf/index.xml" rel="self" type="application/rss+xml"/><item><title>Cloudflare 安全規則，防機器人和掃描，防黑AS</title><link>/posts/cloudflare-waf-r/</link><pubDate>Sun, 01 Jun 2025 00:25:04 +0000</pubDate><guid>/posts/cloudflare-waf-r/</guid><description>&lt;h1 class="relative group"&gt;我的三個Cloudflare WAF安全規則
+ &lt;div id="我的三個cloudflare-waf安全規則" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%88%91%e7%9a%84%e4%b8%89%e5%80%8bcloudflare-waf%e5%ae%89%e5%85%a8%e8%a6%8f%e5%89%87" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+
+&lt;h2 class="relative group"&gt;前言
+ &lt;div id="前言" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%89%8d%e8%a8%80" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;在運營網站的過程中，Web應用防火牆（WAF）是保護網站安全的重要工具。 今天我將發佈兩個在Cloudflare的WAF規則，希望能説明到有需要的站長。&lt;/p&gt;</description></item></channel></rss>

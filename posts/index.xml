@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>記事 on Dahi Open Tech</title><link>/posts/</link><description>Recent content in 記事 on Dahi Open Tech</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Wed, 04 Jun 2025 09:25:04 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>分析一個兩年前發現的酷安社區漏洞，無視圖片連結域限制發帖</title><link>/posts/coolapk-any-pic/</link><pubDate>Wed, 04 Jun 2025 09:25:04 +0000</pubDate><guid>/posts/coolapk-any-pic/</guid><description>&lt;h2 class="relative group"&gt;發帖原因
+ &lt;div id="發帖原因" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%99%bc%e5%b8%96%e5%8e%9f%e5%9b%a0" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;起因是我昨天在L站發帖發現引用我的圖床出錯了（我全站有反機器人規則）。 然後突然想起來了這個酷安漏洞，&lt;strong&gt;不知道&lt;/strong&gt;現在還有沒有。&lt;/p&gt;</description></item><item><title>2025年中國內地 Cloudflare DNS over HTTPS (DoH) 使用教程</title><link>/posts/cloudflare-dns-any/</link><pubDate>Sun, 01 Jun 2025 03:25:04 +0000</pubDate><guid>/posts/cloudflare-dns-any/</guid><description>&lt;h1 class="relative group"&gt;Cloudflare DNS over HTTPS （DoH） 使用教程
+ &lt;div id="cloudflare-dns-over-https-doh-使用教程" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloudflare-dns-over-https-doh-%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+&lt;p&gt;Cloudflare 提供多種 DNS over HTTPS （DoH） 服務端點，包括標準 DNS、家庭保護 DNS 和安全 DNS 服務。
+而其附帶的諸如ECH等各種功能，似是禁忌樂章。
+以下是詳細使用教程。來自中國內地的報告顯示，Cloudflare的部分DNS網域已被封鎖。但是封的居然不是全域，離譜了，用子網域就行。看來是開了後門。&lt;/p&gt;</description></item><item><title>Cloudflare 安全規則，防機器人和掃描，防黑AS</title><link>/posts/cloudflare-waf-r/</link><pubDate>Sun, 01 Jun 2025 00:25:04 +0000</pubDate><guid>/posts/cloudflare-waf-r/</guid><description>&lt;h1 class="relative group"&gt;我的三個Cloudflare WAF安全規則
+ &lt;div id="我的三個cloudflare-waf安全規則" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%88%91%e7%9a%84%e4%b8%89%e5%80%8bcloudflare-waf%e5%ae%89%e5%85%a8%e8%a6%8f%e5%89%87" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+
+&lt;h2 class="relative group"&gt;前言
+ &lt;div id="前言" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%89%8d%e8%a8%80" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;在運營網站的過程中，Web應用防火牆（WAF）是保護網站安全的重要工具。 今天我將發佈兩個在Cloudflare的WAF規則，希望能説明到有需要的站長。&lt;/p&gt;</description></item><item><title>雲原神國際版服務器</title><link>/posts/genshin-cloud-os-edit/</link><pubDate>Sat, 10 Aug 2024 01:25:04 +0000</pubDate><guid>/posts/genshin-cloud-os-edit/</guid><description>&lt;p&gt;國際版延時高，進不去
+抓包軟件？啟動！&lt;/p&gt;
+&lt;p&gt;重寫 api &lt;code&gt;https://sg-cg-api.hoyoverse.com/hk4e_global/cg/dispatcher/api/getNodesInfo&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;retcode&amp;#34;: 0,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;message&amp;#34;: &amp;#34;OK&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;data&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;wait_seconds&amp;#34;: 0,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;nodes&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_name&amp;#34;: &amp;#34;A1&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;net_state&amp;#34;: &amp;#34;NetStateGood&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;net_value&amp;#34;: 22,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;queue_state&amp;#34;: &amp;#34;QueueStateLong&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;queue_value&amp;#34;: 2280,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;recommend&amp;#34;: true,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;isp_type&amp;#34;: 4,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;region_ids&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;20107000055&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_id&amp;#34;: &amp;#34;2010&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_alias&amp;#34;: &amp;#34;A1&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;vendor_id&amp;#34;: 2,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_alias_i18n&amp;#34;: &amp;#34;dispatch_nodeName_1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_name&amp;#34;: &amp;#34;A2&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;net_state&amp;#34;: &amp;#34;NetStateGood&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;net_value&amp;#34;: 33,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;queue_state&amp;#34;: &amp;#34;QueueStateLong&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;queue_value&amp;#34;: 1110,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;recommend&amp;#34;: false,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;isp_type&amp;#34;: 4,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;region_ids&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;20207000065&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_id&amp;#34;: &amp;#34;2020&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_alias&amp;#34;: &amp;#34;A2&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;vendor_id&amp;#34;: 2,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_alias_i18n&amp;#34;: &amp;#34;dispatch_nodeName_2&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_name&amp;#34;: &amp;#34;S1&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;net_state&amp;#34;: &amp;#34;NetStateGood&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;net_value&amp;#34;: 400,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;queue_state&amp;#34;: &amp;#34;QueueStateLong&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;queue_value&amp;#34;: 1110,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;recommend&amp;#34;: true,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;isp_type&amp;#34;: 4,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;region_ids&amp;#34;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;10907000036&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_id&amp;#34;: &amp;#34;1090&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_alias&amp;#34;: &amp;#34;S1&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;vendor_id&amp;#34;: 2,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;node_alias_i18n&amp;#34;: &amp;#34;dispatch_nodeName_0&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;network_info&amp;#34;: null,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;result_code&amp;#34;: &amp;#34;NONE&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;maintenance_info&amp;#34;: null
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;A是美國，S是新加坡哦！&lt;/p&gt;</description></item><item><title>OpenWrt上Cloudflare DDNS 設定步驟教學</title><link>/posts/openwrt-cf-ddns/</link><pubDate>Thu, 01 Aug 2024 10:25:04 +0000</pubDate><guid>/posts/openwrt-cf-ddns/</guid><description>&lt;h2 class="relative group"&gt;📌 Cloudflare DDNS 設定步驟
+ &lt;div id="-cloudflare-ddns-設定步驟" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#-cloudflare-ddns-%e8%a8%ad%e5%ae%9a%e6%ad%a5%e9%a9%9f" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+
+&lt;h3 class="relative group"&gt;1. 檢查 DDNS 服務是否支援 Cloudflare
+ &lt;div id="1-檢查-ddns-服務是否支援-cloudflare" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-%e6%aa%a2%e6%9f%a5-ddns-%e6%9c%8d%e5%8b%99%e6%98%af%e5%90%a6%e6%94%af%e6%8f%b4-cloudflare" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;在 OpenWrt 的 DDNS 設定中，確認是否有「cloudflare.com-v4」選項：&lt;/p&gt;</description></item><item><title>Tyranor模擬器Kirikiri字型大小設定</title><link>/posts/tjs-font-size/</link><pubDate>Sat, 20 Apr 2024 09:25:04 +0000</pubDate><guid>/posts/tjs-font-size/</guid><description>&lt;h2 class="relative group"&gt;patch.tjs
+ &lt;div id="patchtjs" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#patchtjs" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;System.setArgument(&amp;#34;-debugwin&amp;#34;,&amp;#34;no&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Plugins.link(&amp;#34;kirikiroid2.dll&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;with(Font) {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;global._origFontHeightProp = &amp;amp;.height;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;property hook_font_height {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;setter(v) { global._origFontHeightProp = v * 2.0; }
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;getter { return global._origFontHeightProp; }
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;amp;.height = &amp;amp;(hook_font_height incontextof null);
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description></item><item><title>Github與Git的電子信箱郵箱地址設置</title><link>/posts/github-git-email/</link><pubDate>Wed, 10 Apr 2024 01:25:04 +0000</pubDate><guid>/posts/github-git-email/</guid><description>&lt;p&gt;眾所周知，git的commit資訊往往包含信箱等數據，似乎官方不會主動處理開啟Private信箱帳號的git內容&lt;/p&gt;</description></item><item><title>日文漢字簡繁正體轉換</title><link>/posts/kanji-converter/</link><pubDate>Sat, 30 Sep 2023 19:26:04 +0000</pubDate><guid>/posts/kanji-converter/</guid><description>&lt;h1 class="relative group"&gt;僅學習研究使用
+ &lt;div id="僅學習研究使用" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%83%85%e5%ad%b8%e7%bf%92%e7%a0%94%e7%a9%b6%e4%bd%bf%e7%94%a8" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;a href="https://han-converter.dahi.icu/" target="_blank"&gt;https://han-converter.dahi.icu/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Telegram 啟用電子郵件登入碼驗證方法</title><link>/posts/tg-email-login/</link><pubDate>Wed, 27 Sep 2023 09:25:04 +0000</pubDate><guid>/posts/tg-email-login/</guid><description>&lt;h4 class="relative group"&gt;&lt;strong&gt;1. 功能說明&lt;/strong&gt;
+ &lt;div id="1-功能說明" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-%e5%8a%9f%e8%83%bd%e8%aa%aa%e6%98%8e" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h4&gt;
+&lt;p&gt;Telegram 預設使用 &lt;strong&gt;手機號碼+簡訊驗證碼&lt;/strong&gt; 登入，但部分用戶可能希望改用 &lt;strong&gt;電子郵件地址&lt;/strong&gt; 作為登入認證方式。透過以下方法，可以觸發 Telegram 的 &lt;strong&gt;「電子郵件驗證綁定」&lt;/strong&gt; 選項，從而實現郵箱登入。&lt;/p&gt;</description></item><item><title>小米路由器4A千兆版最新款（r4av2）Openwrt刷入教程</title><link>/posts/mi-r4av2-openwrt-flash/</link><pubDate>Fri, 19 May 2023 01:25:04 +0000</pubDate><guid>/posts/mi-r4av2-openwrt-flash/</guid><description>&lt;h3 class="relative group"&gt;&lt;strong&gt;2023 小米路由器 4A 千兆版 （r4av2） OpenWrt 刷機完整教程&lt;/strong&gt;
+ &lt;div id="2023-小米路由器-4a-千兆版-r4av2-openwrt-刷機完整教程" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#2023-%e5%b0%8f%e7%b1%b3%e8%b7%af%e7%94%b1%e5%99%a8-4a-%e5%8d%83%e5%85%86%e7%89%88-r4av2-openwrt-%e5%88%b7%e6%a9%9f%e5%ae%8c%e6%95%b4%e6%95%99%e7%a8%8b" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;** ⚠️ 注意：本教程適用於硬體版本 r4av2（固件版本 2.30.x），與舊版 r4a/r3gv2 不兼容！ **&lt;/p&gt;</description></item><item><title>Bing搜索引擎設定</title><link>/posts/bing-global/</link><pubDate>Mon, 20 Mar 2023 03:25:04 +0000</pubDate><guid>/posts/bing-global/</guid><description>&lt;h2 class="relative group"&gt;日本
+ &lt;div id="日本" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%97%a5%e6%9c%ac" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://global.bing.com/search?q=%@&amp;amp;cc=jp&amp;amp;setlang=zh&amp;amp;setmkt=ja-jp&amp;amp;mkt=ja-jp&amp;amp;adlt=off&amp;amp;setadlt=off&amp;amp;qs=n&amp;amp;FORM=HDRSC1&amp;amp;sp=2&amp;amp;pq=123&amp;amp;sk=HS2&amp;amp;sc=10-2&amp;amp;cvid=0000&amp;amp;lq=1&amp;amp;ghc=1&amp;amp;ghsh=0&amp;amp;ghacc=0&amp;amp;ghpl=&amp;amp;ubiroff=1&amp;amp;toWww=1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;台灣
+ &lt;div id="台灣" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%b0%e7%81%a3" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://global.bing.com/search?q=%@&amp;amp;cc=tw&amp;amp;setlang=zh&amp;amp;setmkt=zh-tw&amp;amp;mkt=zh-tw&amp;amp;adlt=off&amp;amp;setadlt=off&amp;amp;qs=n&amp;amp;FORM=HDRSC1&amp;amp;sp=2&amp;amp;pq=123&amp;amp;sk=HS2&amp;amp;sc=10-2&amp;amp;cvid=0000&amp;amp;lq=1&amp;amp;ghc=1&amp;amp;ghsh=0&amp;amp;ghacc=0&amp;amp;ghpl=&amp;amp;ubiroff=1&amp;amp;toWww=1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;香港
+ &lt;div id="香港" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%a6%99%e6%b8%af" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://global.bing.com/search?q=%@&amp;amp;cc=hk&amp;amp;setlang=zh&amp;amp;setmkt=zh-hk&amp;amp;mkt=zh-hk&amp;amp;adlt=off&amp;amp;setadlt=off&amp;amp;qs=n&amp;amp;FORM=HDRSC1&amp;amp;sp=2&amp;amp;pq=123&amp;amp;sk=HS2&amp;amp;sc=10-2&amp;amp;cvid=0000&amp;amp;lq=1&amp;amp;ghc=1&amp;amp;ghsh=0&amp;amp;ghacc=0&amp;amp;ghpl=&amp;amp;ubiroff=1&amp;amp;toWww=1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description></item><item><title>CloudflareIP位址優選部份數據</title><link>/posts/cloudflare-ip-better/</link><pubDate>Thu, 20 Jan 2022 03:25:04 +0000</pubDate><guid>/posts/cloudflare-ip-better/</guid><description>&lt;p&gt;104.17.64.0 821.8 KB/s
+104.16.160.0 815.3 KB/s
+104.17.96.0 775.3 KB/s
+162.159.36.0 761.9 KB/s
+104.17.32.0 757.7 KB/s
+104.19.32.0 723.1 KB/s
+104.18.96.0 686.1 KB/s
+104.19.160.0 682.3 KB/s
+104.16.96.0 672.6 KB/s
+173.245.49.0 666.8 KB/s
+198.41.220.0 660.4 KB/s
+162.159.128.0 653.4 KB/s
+104.19.64.0 644.2 KB/s
+198.41.211.0 636.2 KB/s
+162.159.46.0 634.3 KB/s
+104.17.128.0 592.3 KB/s
+162.159.200.0 584.1 KB/s
+104.19.0.0 570.1 KB/s
+190.93.244.0 553.7 KB/s
+104.18.224.0 537.8 KB/s
+104.25.32.0 495.3 KB/s
+104.27.64.0 490.6 KB/s
+198.41.208.0 485.2 KB/s
+104.16.224.0 479.7 KB/s
+104.16.64.0 468.1 KB/s
+104.25.128.0 466.8 KB/s
+104.24.224.0 465.8 KB/s&lt;/p&gt;</description></item><item><title>Cloudflare出現1034錯誤</title><link>/posts/cloudflare1034/</link><pubDate>Tue, 20 Jul 2021 03:25:04 +0000</pubDate><guid>/posts/cloudflare1034/</guid><description>&lt;h3 class="relative group"&gt;&lt;strong&gt;Cloudflare 1034 錯誤詳解：網站管理員設定問題及解決方案&lt;/strong&gt;
+ &lt;div id="cloudflare-1034-錯誤詳解網站管理員設定問題及解決方案" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloudflare-1034-%e9%8c%af%e8%aa%a4%e8%a9%b3%e8%a7%a3%e7%b6%b2%e7%ab%99%e7%ae%a1%e7%90%86%e5%93%a1%e8%a8%ad%e5%ae%9a%e5%95%8f%e9%a1%8c%e5%8f%8a%e8%a7%a3%e6%b1%ba%e6%96%b9%e6%a1%88" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+
+&lt;h4 class="relative group"&gt;&lt;strong&gt;1. 1034 錯誤的根本原因&lt;/strong&gt;
+ &lt;div id="1-1034-錯誤的根本原因" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-1034-%e9%8c%af%e8%aa%a4%e7%9a%84%e6%a0%b9%e6%9c%ac%e5%8e%9f%e5%9b%a0" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h4&gt;
+&lt;p&gt;Cloudflare 的 &lt;strong&gt;Error 1034&lt;/strong&gt; 錯誤訊息 &lt;strong&gt;「此網站使用了與帳號身份不符的會員制 IP」&lt;/strong&gt;，通常是因為 &lt;strong&gt;網站管理員錯誤設定&lt;/strong&gt; 導致，具體表現為：&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mail on Dahi Open Tech</title><link>/tags/mail/</link><description>Recent content in Mail on Dahi Open Tech</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Wed, 10 Apr 2024 01:25:04 +0000</lastBuildDate><atom:link href="/tags/mail/index.xml" rel="self" type="application/rss+xml"/><item><title>Github與Git的電子信箱郵箱地址設置</title><link>/posts/github-git-email/</link><pubDate>Wed, 10 Apr 2024 01:25:04 +0000</pubDate><guid>/posts/github-git-email/</guid><description>&lt;p&gt;眾所周知，git的commit資訊往往包含信箱等數據，似乎官方不會主動處理開啟Private信箱帳號的git內容&lt;/p&gt;</description></item><item><title>Telegram 啟用電子郵件登入碼驗證方法</title><link>/posts/tg-email-login/</link><pubDate>Wed, 27 Sep 2023 09:25:04 +0000</pubDate><guid>/posts/tg-email-login/</guid><description>&lt;h4 class="relative group"&gt;&lt;strong&gt;1. 功能說明&lt;/strong&gt;
+ &lt;div id="1-功能說明" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-%e5%8a%9f%e8%83%bd%e8%aa%aa%e6%98%8e" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h4&gt;
+&lt;p&gt;Telegram 預設使用 &lt;strong&gt;手機號碼+簡訊驗證碼&lt;/strong&gt; 登入，但部分用戶可能希望改用 &lt;strong&gt;電子郵件地址&lt;/strong&gt; 作為登入認證方式。透過以下方法，可以觸發 Telegram 的 &lt;strong&gt;「電子郵件驗證綁定」&lt;/strong&gt; 選項，從而實現郵箱登入。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bing on Dahi Open Tech</title><link>/tags/bing/</link><description>Recent content in Bing on Dahi Open Tech</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Mon, 20 Mar 2023 03:25:04 +0000</lastBuildDate><atom:link href="/tags/bing/index.xml" rel="self" type="application/rss+xml"/><item><title>Bing搜索引擎設定</title><link>/posts/bing-global/</link><pubDate>Mon, 20 Mar 2023 03:25:04 +0000</pubDate><guid>/posts/bing-global/</guid><description>&lt;h2 class="relative group"&gt;日本
+ &lt;div id="日本" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%97%a5%e6%9c%ac" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://global.bing.com/search?q=%@&amp;amp;cc=jp&amp;amp;setlang=zh&amp;amp;setmkt=ja-jp&amp;amp;mkt=ja-jp&amp;amp;adlt=off&amp;amp;setadlt=off&amp;amp;qs=n&amp;amp;FORM=HDRSC1&amp;amp;sp=2&amp;amp;pq=123&amp;amp;sk=HS2&amp;amp;sc=10-2&amp;amp;cvid=0000&amp;amp;lq=1&amp;amp;ghc=1&amp;amp;ghsh=0&amp;amp;ghacc=0&amp;amp;ghpl=&amp;amp;ubiroff=1&amp;amp;toWww=1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;台灣
+ &lt;div id="台灣" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%b0%e7%81%a3" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://global.bing.com/search?q=%@&amp;amp;cc=tw&amp;amp;setlang=zh&amp;amp;setmkt=zh-tw&amp;amp;mkt=zh-tw&amp;amp;adlt=off&amp;amp;setadlt=off&amp;amp;qs=n&amp;amp;FORM=HDRSC1&amp;amp;sp=2&amp;amp;pq=123&amp;amp;sk=HS2&amp;amp;sc=10-2&amp;amp;cvid=0000&amp;amp;lq=1&amp;amp;ghc=1&amp;amp;ghsh=0&amp;amp;ghacc=0&amp;amp;ghpl=&amp;amp;ubiroff=1&amp;amp;toWww=1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;香港
+ &lt;div id="香港" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%a6%99%e6%b8%af" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://global.bing.com/search?q=%@&amp;amp;cc=hk&amp;amp;setlang=zh&amp;amp;setmkt=zh-hk&amp;amp;mkt=zh-hk&amp;amp;adlt=off&amp;amp;setadlt=off&amp;amp;qs=n&amp;amp;FORM=HDRSC1&amp;amp;sp=2&amp;amp;pq=123&amp;amp;sk=HS2&amp;amp;sc=10-2&amp;amp;cvid=0000&amp;amp;lq=1&amp;amp;ghc=1&amp;amp;ghsh=0&amp;amp;ghacc=0&amp;amp;ghpl=&amp;amp;ubiroff=1&amp;amp;toWww=1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description></item></channel></rss>
