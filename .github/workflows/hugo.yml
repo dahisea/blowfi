@@ -1,4 +1,4 @@
-name: Deploy Hugo site to gh-pages
+name: Deploy to gh-pages
 
 on:
   push:
@@ -8,56 +8,43 @@ on:
 permissions:
   contents: write
   pages: write
-  id-token: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.161.1
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      
-
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install Hugo
+        run: |
+          wget -qO "$RUNNER_TEMP/hugo.deb" \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i "$RUNNER_TEMP/hugo.deb"
+
+      - name: Cache Hugo modules
+        uses: actions/cache@v4
         with:
-          submodules: recursive
-      
-      
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      
-      - name: Prebuild (copy index.md -> index.zh-SG.md)
+          path: /home/runner/.cache/hugo
+          key: ${{ runner.os }}-hugo-${{ hashFiles('go.mod') }}
+
+      - name: Prebuild
         run: bash scripts/prebuild.sh
 
-      - name: Build with Hugo
+      - name: Build
         env:
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
-          HUGO_ENVIRONMENT: production
-        run: |
-          hugo --minify
-      
-      - name: Configure Git
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
+          HUGO_ENV: production
+        run: hugo --gc --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages
           force_orphan: true
