@@ -1,7 +1,7 @@
 languageCode = "zh-SG"
 languageName = "简体字"
-weight = 3
-title = "ダヒの世界"
+weight = 2
+title = "Dahi Open Tech"
 
 [params]
   displayName = "简体"

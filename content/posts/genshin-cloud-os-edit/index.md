@@ -1,14 +1,14 @@
 ---
-title: "雲原神國際版服務器"
+title: "云原神国际版服务器"
 date: 2024-08-10T01:25:04Z
 draft: false
 description: ""
 tags: ["game", "genshin"]
 ---
-國際版延時高，進不去
-抓包軟件？啟動！
+国际版延时高，进不去
+抓包软件？ 启动！
 
-重寫 api `https://sg-cg-api.hoyoverse.com/hk4e_global/cg/dispatcher/api/getNodesInfo`
+重写 api `https://sg-cg-api.hoyoverse.com/hk4e_global/cg/dispatcher/api/getNodesInfo`
 
 
 ```
@@ -74,4 +74,4 @@ tags: ["game", "genshin"]
 }
 ```
 
-A是美國，S是新加坡哦！
+A是美国，S是新加坡哦！

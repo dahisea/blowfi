@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo mod get github.com/nunocoracao/blowfish/v2@v2.103.0 && hugo --gc --minify"
+command = "bash scripts/prebuild.sh && hugo mod get github.com/nunocoracao/blowfish/v2@v2.103.0 && hugo --gc --minify"
 
 [build.environment]
 HUGO_VERSION = "0.158.0"

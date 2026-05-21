@@ -28,16 +28,27 @@
     return p;
   }
 
+  function addLangPrefix(baseWithoutLeading, lang) {
+    if (!lang) return null;
+    var v = "/" + lang.toLowerCase() + "/" + baseWithoutLeading;
+    return v.replace(/\/+/g, "/");
+  }
+
   function makeLangUrls(baseUrl) {
     var urls = [baseUrl];
     if (!cfg.autoSum || !cfg.langCodes.length) return urls;
     var baseWithoutLeading = baseUrl.replace(/^\//, "");
+
+    // default language with prefix (e.g. /zh-tw/path/)
+    var dflt = addLangPrefix(baseWithoutLeading, cfg.defaultLang);
+    if (dflt && dflt !== baseUrl) urls.push(dflt);
+
+    // other languages with prefix
     for (var i = 0; i < cfg.langCodes.length; i++) {
       var lc = cfg.langCodes[i];
       if (!lc) continue;
-      var variant = "/" + lc + "/" + baseWithoutLeading;
-      variant = variant.replace(/\/+/g, "/");
-      urls.push(variant);
+      var variant = addLangPrefix(baseWithoutLeading, lc);
+      if (variant) urls.push(variant);
     }
     return urls;
   }
@@ -104,20 +115,21 @@
     if (!country) return;
     // page-level block
     if (notsafe && notsafe.indexOf(country) !== -1) {
-      document.querySelectorAll("main, article:first-of-type").forEach(function(el) {
-        if (el.querySelector('[data-notsafe]')) return; // already handled as card
+      var els = document.querySelectorAll("main, article:first-of-type");
+      for (var ei = 0; ei < els.length; ei++) {
+        var el = els[ei];
+        if (el.querySelector('[data-notsafe]')) continue;
         el.innerHTML = '<div class="p-8 text-center text-neutral-500"><p>⚠️ 内容在当地不可用</p></div>';
-      });
+      }
     }
     // card-level block
-    document.querySelectorAll('[data-notsafe]').forEach(function(card) {
+    var cards = document.querySelectorAll('[data-notsafe]');
+    for (var ci = 0; ci < cards.length; ci++) {
       try {
-        var blocked = JSON.parse(card.getAttribute('data-notsafe'));
-        if (blocked.indexOf(country) !== -1) {
-          card.style.display = 'none';
-        }
+        var blocked = JSON.parse(cards[ci].getAttribute('data-notsafe'));
+        if (blocked.indexOf(country) !== -1) cards[ci].style.display = 'none';
       } catch(e) {}
-    });
+    }
   }
 
   if (cache) {
@@ -132,6 +144,62 @@
         doBlock(country);
       })
       .catch(function() {});
+  }
+})();
+
+/* ---- S2T: auto convert simplified Chinese to traditional for zh-TW ---- */
+(function() {
+  var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+  if (!lang.match(/^zh(-|$)/) || lang.match(/hans|cn|sg|my|chs/)) return;
+
+  var style = document.createElement('style');
+  style.textContent = 'body{visibility:hidden}';
+  document.head.appendChild(style);
+
+  function applyConversion(map) {
+    function walk(node) {
+      if (node.nodeType === 3) {
+        var text = node.nodeValue, out = '', ch;
+        for (var i = 0; i < text.length; i++) {
+          ch = text[i];
+          out += map[ch] || ch;
+        }
+        if (out !== text) node.nodeValue = out;
+      } else if (node.nodeType === 1) {
+        var tag = node.tagName.toLowerCase();
+        if (/^(script|style|textarea|pre|code)$/.test(tag)) return;
+        var kids = node.childNodes;
+        for (var j = 0; j < kids.length; j++) walk(kids[j]);
+      }
+    }
+
+    if (document.body) {
+      walk(document.body);
+      document.body.style.visibility = 'visible';
+    } else {
+      document.addEventListener('DOMContentLoaded', function() {
+        walk(document.body);
+        document.body.style.visibility = 'visible';
+      });
+    }
+  }
+
+  var cached = window.__s2tMap;
+  if (cached) {
+    applyConversion(cached);
+  } else {
+    fetch('/translate-owo.txt').then(function(r) { return r.text(); }).then(function(text) {
+      var map = {}, lines = text.split('\n');
+      for (var i = 0; i < lines.length; i++) {
+        var parts = lines[i].split(',');
+        if (parts.length === 2) map[parts[1].trim()] = parts[0].trim();
+      }
+      window.__s2tMap = map;
+      applyConversion(map);
+    }).catch(function() {
+      document.body && (document.body.style.visibility = 'visible');
+      document.addEventListener('DOMContentLoaded', function() { document.body.style.visibility = 'visible'; });
+    });
   }
 })();
 </script>

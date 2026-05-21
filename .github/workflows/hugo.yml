@@ -41,6 +41,9 @@ jobs:
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       
+      - name: Prebuild (copy index.md -> index.zh-SG.md)
+        run: bash scripts/prebuild.sh
+
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache

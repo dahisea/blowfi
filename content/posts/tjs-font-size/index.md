@@ -1,8 +1,8 @@
 ---
-title: "Tyranor模擬器Kirikiri字型大小設定"
+title: "Tyranor 模拟器 Kirikiri 字号设置"
 date: 2024-04-20T09:25:04Z
 draft: false
-description: "一種大小調節方式"
+description: "一种大小调节方式"
 tags: ["gal", "krkr"]
 ---
 ## patch.tjs

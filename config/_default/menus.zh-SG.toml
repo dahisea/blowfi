@@ -1,15 +1,4 @@
-# -- メインメニュー --
-# メインメニューはページトップのヘッダーに表示されます。
-# 利用可能なパラメーターは name, pageRef, page, url, title, weight です。
-# 
-# 最もシンプルなメニュー設定はこちらです:
-#   name = このメニューリンクに表示される名前
-#   pageRef = ページやセクションのリンクに利用される識別子
-#
-# デフォルトでは、メニューはアルファベット順に並べられます。
-# これは、 weight value で上書き可能です。
-# このメニューは weight が低い値から高い値に順に表示されます。
-
+# -- Main menu (Simplified Chinese) --
 
 [[main]]
   name = "Article"
@@ -38,10 +27,6 @@
   url = "https://t.me/Unit_O"
   weight = 450
 
-# -- フッターメニュー --
-# このフッターメニューはページ下部のコピーライト表示の前に表示されます。
-# 上記のメインメニューと同様に設定できます。
-
  [[footer]]
    name = "TAG"
    pageRef = "tags"
@@ -51,13 +36,3 @@
    name = "DNS"
    pageRef = "DNS"
    weight = 20
-
- [[footer]]
-   name = "DONATE"
-   pageRef = "donate"
-   weight = 95
-   
- [[footer]]
-   name = "異次元への旅"
-   url = "https://travel.moe/go.html"
-   weight = 100

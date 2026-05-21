@@ -150,7 +150,7 @@ smartTOC = true
   timezone = "Asia/Macau"
   # v3 only: region prefix (e.g. "us" or "eu" → /analytics/us/api/...)
   region = ""
-  # multi-language view summing: query all language URL variants then sum
+  # multi-language view summing across zh-TW (default) and zh-SG URLs
   autoSumLanguages = true
   defaultLanguage = "zh-TW"
   languages = ["zh-SG"]
