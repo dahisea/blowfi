@@ -6,42 +6,40 @@
 {{ $thumbnailAspectRatio := site.Params.thumbnailAspectRatio | default "1.5" }}
 {{ $thumbnailAspectRatio = replaceRE "[^0-9.]" "" $thumbnailAspectRatio }}
 {{ if eq $thumbnailAspectRatio "" }}{{ $thumbnailAspectRatio = "1.5" }}{{ end }}
-{{ if not .Params.hideFeatureImage }}
-  {{ with $page }}
-    {{ with .Params.featureimage }}
-      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
-        {{ if site.Params.hotlinkFeatureImage }}
-          {{ $featuredURL = . }}
-        {{ else }}
-          {{ $featured = resources.GetRemote . }}
-        {{ end }}
+{{ with $page }}
+  {{ with .Params.featureimage }}
+    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+      {{ if site.Params.hotlinkFeatureImage }}
+        {{ $featuredURL = . }}
       {{ else }}
-        {{ $featured = resources.Get . }}
+        {{ $featured = resources.GetRemote . }}
       {{ end }}
+    {{ else }}
+      {{ $featured = resources.Get . }}
     {{ end }}
+  {{ end }}
 
-    {{ if not (or $featured $featuredURL) }}
-      {{ $images := .Resources.ByType "image" }}
-      {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
-        {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
-      {{ end }}
+  {{ if not (or $featured $featuredURL) }}
+    {{ $images := .Resources.ByType "image" }}
+    {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+      {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
     {{ end }}
+  {{ end }}
 
-    {{ if not (or $featured $featuredURL) }}
-      {{ $default := site.Store.Get "defaultFeaturedImage" }}
-      {{ if $default.url }}
-        {{ $featuredURL = $default.url }}
-      {{ else if $default.obj }}
-        {{ $featured = $default.obj }}
-      {{ end }}
+  {{ if not (or $featured $featuredURL) }}
+    {{ $default := site.Store.Get "defaultFeaturedImage" }}
+    {{ if $default.url }}
+      {{ $featuredURL = $default.url }}
+    {{ else if $default.obj }}
+      {{ $featured = $default.obj }}
     {{ end }}
+  {{ end }}
 
-    {{ if not $featuredURL }}
-      {{ with $featured }}
-        {{ $featuredURL = .RelPermalink }}
-        {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
-          {{ $featuredURL = (.Resize "600x").RelPermalink }}
-        {{ end }}
+  {{ if not $featuredURL }}
+    {{ with $featured }}
+      {{ $featuredURL = .RelPermalink }}
+      {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+        {{ $featuredURL = (.Resize "600x").RelPermalink }}
       {{ end }}
     {{ end }}
   {{ end }}
@@ -52,14 +50,15 @@
 {{ end }}
 
 <article
-  class="article-link--card relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600"{{ with $page.Params.notsafeForArea }} data-notsafe='{{ . | jsonify }}'{{ end }}>
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600"{{ with $page.Params.notsafeForArea }} data-notsafe='{{ . | jsonify }}'{{ end }}>
   {{ with $featuredURL }}
-    <div class="flex-none relative overflow-hidden thumbnail_card" style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
+    <div class="flex-none relative overflow-hidden thumbnail_card_related" style="--thumbnail-aspect-ratio: {{ $thumbnailAspectRatio }}">
       <img
         src="{{ . }}"
         role="presentation"
         loading="lazy"
         decoding="async"
+        fetchpriority="low"
         class="not-prose absolute inset-0 w-full h-full object-cover">
     </div>
   {{ end }}

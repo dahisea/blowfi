@@ -4,44 +4,59 @@
     <div class="absolute inset-x-0 bottom-0 h-1/2"></div>
     <div class="mx-auto max-w-7xl p-0">
       <div class="relative sm:overflow-hidden">
-        {{/* Updated background image logic */}}
-        {{- $images := .Resources.ByType "image" -}}
-        {{- $featured := $images.GetMatch "*background*" -}}
-        {{- if not $featured }}{{ $featured = $images.GetMatch "*feature*" }}{{ end -}}
-        {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-        
-        {{ if and .Params.featureimage (not $featured) }}
-          {{- $url := .Params.featureimage -}}
-          {{ $featured = $url }}
-        {{ end }}
-        
-        {{- if not $featured }}
+        <div class="fixed inset-x-0 top-0 -z-10">
+          {{ $useDefault := true }}
+          {{ $homepageImage := "" }}
+          {{ $homepageImageURL := "" }}
           {{ with .Site.Params.defaultBackgroundImage }}
-            {{ $featured = . }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ if site.Params.hotlinkFeatureImage }}
+                {{ $homepageImageURL = . }}
+              {{ else }}
+                {{ $homepageImage = resources.GetRemote . }}
+              {{ end }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+            {{ end }}
           {{ end }}
-        {{ end -}}
-        
-        {{ $shouldBlur := .Site.Params.homepage.layoutBackgroundBlur | default false }}
-        {{ $shouldAddHeaderSpace := .Site.Params.homepage.layoutBackgroundHeaderSpace | default true }}
-        
-        {{ if $shouldAddHeaderSpace }}
-          <div id="hero" class="h-[150px] md:h-[200px]"></div>
-        {{ end }}
-        
-        {{- with $featured -}}
-          <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-               style="background-image:url({{ $featured }});">
-            <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
-            </div>
-            <div class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
-            </div>
-          </div>
-          
-          {{ if $shouldBlur }}
-            <div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+          {{ with .Site.Params.homepage.homepageImage }}
+            {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+              {{ if site.Params.hotlinkFeatureImage }}
+                {{ $homepageImageURL = . }}
+                {{ $useDefault = false }}
+              {{ else }}
+                {{ $homepageImage = resources.GetRemote . }}
+                {{ $useDefault = false }}
+              {{ end }}
+            {{ else }}
+              {{ $homepageImage = resources.Get . }}
+              {{ $useDefault = false }}
+            {{ end }}
           {{ end }}
-        {{- end -}}
-        
+          {{ $imgSrc := "" }}
+          {{ if $homepageImageURL }}
+            {{ $imgSrc = partial "functions/random-image-url.html" $homepageImageURL }}
+          {{ else if $homepageImage }}
+            {{ $imgSrc = $homepageImage.RelPermalink }}
+          {{ end }}
+          {{ if $imgSrc }}
+            {{ $style := "" }}
+            {{ $defaultPosition := cond $useDefault site.Params.imagePosition false }}
+            {{ with $.Params.imagePosition | default $defaultPosition }}
+              {{ $style = printf "object-position: %s;" . }}
+            {{ end }}
+            <img
+              id="background-image"
+              class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover"
+              src="{{ $imgSrc }}"
+              role="presentation"
+              {{ if $style }}style="{{ $style | safeCSS }}"{{ end }}>
+            <div
+              class="from-neutral absolute inset-0 h-[1000px] bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>
+            <div
+              class="from-neutral absolute inset-0 h-[1000px] bg-gradient-to-t to-neutral-100 opacity-60 mix-blend-normal dark:from-neutral-800 dark:to-neutral-800"></div>
+          {{ end }}
+        </div>
         <div class="relative flex flex-col items-center justify-center px-1 py-1 text-center">
           {{ with .Site.Params.Author.image }}
             {{ $authorImage := "" }}
@@ -80,9 +95,14 @@
               <div class="flex flex-wrap">
                 {{ range $links := . }}
                   {{ range $name, $url := $links }}
+                    {{ $isEmail := eq $name "email" }}
                     <a
-                      class="hover:text-primary-400 text-primary-800 dark:text-primary-200 px-1"
-                      href="{{ $url }}"
+                      class="{{ cond $isEmail "email-link" "" }} hover:text-primary-400 text-primary-800 dark:text-primary-200 px-1"
+                      href="{{ cond $isEmail "#" ($url | safeURL) }}"
+                      {{ if $isEmail }}
+                        data-email="{{ $url | base64Encode }}"
+                        data-subject="Contact"
+                      {{ end }}
                       target="_blank"
                       aria-label="{{ $name | title }}"
                       title="{{ $name | title }}"
@@ -104,11 +124,16 @@
   {{ partial "recent-articles/main.html" . }}
 </section>
 {{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}
+  <div
+    id="background-blur"
+    class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-xl bg-neutral-100/75 dark:bg-neutral-800/60"></div>
   {{ $backgroundBlur := resources.Get "js/background-blur.js" }}
   {{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
   <script
     type="text/javascript"
     src="{{ $backgroundBlur.RelPermalink }}"
     integrity="{{ $backgroundBlur.Data.Integrity }}"
-    data-target-id="background-blur"></script>
+    data-blur-id="background-blur"
+    data-image-id="background-image"
+    {{ if $imgSrc }}data-image-url="{{ $imgSrc }}"{{ end }}></script>
 {{ end }}

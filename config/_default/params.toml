@@ -16,13 +16,18 @@ mainSections = ["posts"]
 disableImageZoom = false
 disableImageOptimization = false
 disableTextInHeader = false
+hotlinkFeatureImage = true
+fingerprintAlgorithm = "sha512"
 
-defaultBackgroundImage = "https://www.loliapi.com/acg/pe/" # used as default for background images 
-defaultFeaturedImage = "https://www.loliapi.com/acg/pc/" # used as default for featured images in all articles
+defaultBackgroundImage = "https://www.loliapi.com/acg/pe/"
+defaultFeaturedImage = "https://www.loliapi.com/acg/pc/"
 
-# highlightCurrentMenuArea = true
-# smartTOC = true
+highlightCurrentMenuArea = true
+smartTOC = true
 # smartTOCHideUnfocusedChildren = true
+
+[seo]
+  metaDescriptionOrder = ["summary", "description", "site"]
 
 [header]
   layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
@@ -64,20 +69,22 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/" # used as default for f
   invertPagination = false
   showReadingTime = true
   showTableOfContents = true
-  # showRelatedContent = false
-  # relatedContentLimit = 3
   showTaxonomies = true
+  showCategories = true
+  showTags = true
   showAuthorsBadges = false
   showWordCount = true
+  showRelatedContent = false
+  relatedContentLimit = 3
   sharingLinks = [ "linkedin", "twitter", "bluesky", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
   showZenMode = true
   showComments = true
 
 [list]
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
-  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
+  heroStyle = "background"
+  layoutBackgroundBlur = true
+  layoutBackgroundHeaderSpace = true
   showBreadcrumbs = false
   showSummary = false
   showViews = true
@@ -128,9 +135,39 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/" # used as default for f
   # domain = "llama.yoursite.com"
 
 [umamiAnalytics]
-  # websiteid = "ABC12345"
-  # domain = "llama.yoursite.com"
-  # dataDomains = "yoursite.com,yoursite2.com"
+  websiteid = "Bt6ztPDMbLPhQklO"
+  domain = "umami.yu.ac.cn"
+  # dataDomains = "dahi.icu"
+  # scriptName = "script.js"
+  # doNotTrack = false
+  # enableTrackEvent = true
+
+[umamiStats]
+  enable = true
+  apiVersion = "v2"
+  baseUrl = "https://umami.yu.ac.cn"
+  shareId = "Bt6ztPDMbLPhQklO"
+  timezone = "Asia/Macau"
+  # v3 only: region prefix (e.g. "us" or "eu" → /analytics/us/api/...)
+  region = ""
+  # multi-language view summing: query all language URL variants then sum
+  autoSumLanguages = true
+  defaultLanguage = "zh-TW"
+  languages = ["zh-SG"]
+
+[selineAnalytics]
+  # token = ""
+
+[buymeacoffee]
+  # identifier = ""
+  # globalWidget = false
+  # globalWidgetMessage = ""
+  # globalWidgetColor = "#FFDD00"
+  # globalWidgetPosition = "Right"
+
+[rssnext]
+  # feedId = ""
+  # userId = ""
 
 [advertisement]
   adsense = "ca-pub-3758644447684310"

@@ -1,0 +1,137 @@
+<script>
+(function() {
+  var stats = window.__umamiStats;
+  if (!stats || !stats.cfg.enable) return;
+
+  var cfg = stats.cfg;
+
+  function spanIdToUrl(id) {
+    var raw = id.slice(6);
+
+    if (raw === "home" || raw === "_index.md" || raw === "" || raw === "/") return "/";
+
+    if (raw.startsWith("taxonomy_")) return "/" + raw.slice(9) + "/";
+
+    if (raw.startsWith("term_")) {
+      var t = raw.slice(5);
+      var parts = t.split("/");
+      if (parts.length > 1) return "/" + parts[0] + "/" + parts[1] + "/";
+      return "/tags/" + t + "/";
+    }
+
+    var p = raw;
+    p = p.replace(/(_?index)(\.[a-zA-Z-]+)?\.md$/, "");
+    p = p.replace(/\.md$/, "");
+    if (!p || p === "/") return "/";
+    if (!p.startsWith("/")) p = "/" + p;
+    if (!p.endsWith("/")) p = p + "/";
+    return p;
+  }
+
+  function makeLangUrls(baseUrl) {
+    var urls = [baseUrl];
+    if (!cfg.autoSum || !cfg.langCodes.length) return urls;
+    var baseWithoutLeading = baseUrl.replace(/^\//, "");
+    for (var i = 0; i < cfg.langCodes.length; i++) {
+      var lc = cfg.langCodes[i];
+      if (!lc) continue;
+      var variant = "/" + lc + "/" + baseWithoutLeading;
+      variant = variant.replace(/\/+/g, "/");
+      urls.push(variant);
+    }
+    return urls;
+  }
+
+  function processSpan(span, websiteId, token) {
+    var id = span.getAttribute("id");
+    if (!id || !id.startsWith("views_")) return;
+
+    var url = spanIdToUrl(id);
+    if (!url) return;
+
+    var urls = makeLangUrls(url);
+    var promises = urls.map(function(u) {
+      return stats.fetchPageviews(websiteId, token, u)["catch"](function() { return 0; });
+    });
+
+    Promise.all(promises).then(function(results) {
+      var total = 0;
+      for (var i = 0; i < results.length; i++) total += results[i];
+      displayViews(span, total);
+    })["catch"](function() {
+      displayViews(span, 0);
+    });
+  }
+
+  function displayViews(span, count) {
+    ["animate-pulse","text-transparent","bg-neutral-300","dark:bg-neutral-400","inline-block","max-h-3","rounded-full","mt-[-2px]","align-middle"].forEach(function(c) {
+      span.classList.remove(c);
+    });
+    span.textContent = count;
+    span.title = "views";
+  }
+
+  function scanAndProcess() {
+    var spans = document.querySelectorAll('span[id^="views_"][title="views"]');
+    if (!spans.length) return;
+
+    stats.getShareToken().then(function(t) {
+      spans.forEach(function(span) {
+        if (span.textContent.trim() === "loading") {
+          processSpan(span, t.websiteId, t.token);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", scanAndProcess);
+  } else {
+    scanAndProcess();
+  }
+
+  new MutationObserver(function() {
+    scanAndProcess();
+  }).observe(document.body, { subtree: true, childList: true, attributes: false });
+})();
+
+/* ---- geo-block: hide pages/cards for specific countries ---- */
+(function() {
+  var notsafe = {{ if .Params.notsafeForArea }}{{ .Params.notsafeForArea | jsonify }}{{ else }}null{{ end }};
+  var cache = window.__visitorCountry;
+
+  function doBlock(country) {
+    if (!country) return;
+    // page-level block
+    if (notsafe && notsafe.indexOf(country) !== -1) {
+      document.querySelectorAll("main, article:first-of-type").forEach(function(el) {
+        if (el.querySelector('[data-notsafe]')) return; // already handled as card
+        el.innerHTML = '<div class="p-8 text-center text-neutral-500"><p>⚠️ 内容在当地不可用</p></div>';
+      });
+    }
+    // card-level block
+    document.querySelectorAll('[data-notsafe]').forEach(function(card) {
+      try {
+        var blocked = JSON.parse(card.getAttribute('data-notsafe'));
+        if (blocked.indexOf(country) !== -1) {
+          card.style.display = 'none';
+        }
+      } catch(e) {}
+    });
+  }
+
+  if (cache) {
+    doBlock(cache);
+  } else {
+    fetch('https://www.cloudflare.com/cdn-cgi/trace')
+      .then(function(r) { return r.text(); })
+      .then(function(text) {
+        var m = text.match(/^loc=(.+)$/m);
+        var country = m ? m[1].trim() : '';
+        window.__visitorCountry = country;
+        doBlock(country);
+      })
+      .catch(function() {});
+  }
+})();
+</script>

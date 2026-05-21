@@ -1,0 +1,9 @@
+{{ $url := . }}
+{{ if $url }}
+  {{ $cacheBuster := delimit (shuffle (split "abcdefghijklmnopqrstuvwxyz0123456789" "")) "" | truncate 10 "" }}
+  {{ $sep := "?" }}
+  {{ if strings.Contains $url "?" }}{{ $sep = "&" }}{{ end }}
+  {{ return (printf "%s%st=%s" $url $sep $cacheBuster) }}
+{{ else }}
+  {{ return $url }}
+{{ end }}

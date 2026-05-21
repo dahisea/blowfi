@@ -1,0 +1,101 @@
+{{- $stats := site.Params.umamiStats -}}
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NT6DQD78');
+</script>
+
+<script>
+(function() {
+  var cfg = {
+    enable: {{ $stats.enable | default false }},
+    version: "{{ $stats.apiVersion | default "v2" }}",
+    baseUrl: "{{ $stats.baseUrl }}",
+    shareId: "{{ $stats.shareId }}",
+    timezone: "{{ $stats.timezone | default "UTC" }}",
+    region: "{{ $stats.region }}",
+    apiPath: "{{ $stats.apiPath }}",
+    autoSum: {{ $stats.autoSumLanguages | default false }},
+    defaultLang: "{{ $stats.defaultLanguage }}",
+    langCodes: [{{ range $stats.languages }}"{{ . }}",{{ end }}],
+    sumBlog: {{ $stats.sumBlogLanguages | default false }}
+  };
+
+  if (cfg.version === "v3" && cfg.region) {
+    cfg.apiPath = "/analytics/" + cfg.region + "/api";
+  } else if (cfg.version === "v3" && cfg.apiPath) {
+    // use custom apiPath, no change
+  } else if (cfg.version === "v3") {
+    cfg.apiPath = "/analytics/us/api";
+  } else {
+    cfg.apiPath = "/api";
+  }
+
+  if (!cfg.enable) return;
+
+  var shareUrl = cfg.baseUrl + cfg.apiPath + "/share/" + cfg.shareId;
+  var statsCache = null;
+
+  function getShareToken() {
+    if (statsCache) return Promise.resolve(statsCache);
+    return fetch(shareUrl).then(function(r) {
+      if (!r.ok) throw new Error("Share token fetch failed: " + r.status);
+      return r.json();
+    }).then(function(data) {
+      statsCache = { websiteId: data.websiteId, token: data.token };
+      return statsCache;
+    });
+  }
+
+  function buildStatsUrl(websiteId, path) {
+    var url = cfg.baseUrl + cfg.apiPath + "/websites/" + websiteId + "/stats";
+    var params = "?startAt=0&endAt=" + Date.now() + "&compare=false";
+    if (path) {
+      params += cfg.version === "v3"
+        ? "&path=eq." + encodeURIComponent(path)
+        : "&url=" + encodeURIComponent(path);
+    }
+    return url + params;
+  }
+
+  function fetchPageviews(websiteId, token, path) {
+    return fetch(buildStatsUrl(websiteId, path), {
+      headers: { "x-umami-share-token": token }
+    }).then(function(r) {
+      if (!r.ok) throw new Error("Stats fetch failed: " + r.status);
+      return r.json();
+    }).then(function(d) {
+      return (d.pageviews && d.pageviews.value) || 0;
+    });
+  }
+
+  function displaySiteStats(websiteId, token) {
+    fetchPageviews(websiteId, token, null).then(function(total) {
+      var el = document.getElementById("site-stats");
+      if (el) el.textContent = "瀏覽總數 " + total;
+    })["catch"](function(e) {
+      console.error("Site stats error:", e);
+      var el = document.getElementById("site-stats");
+      if (el) el.textContent = "統計載入中…";
+    });
+  }
+
+  function showLoading() {
+    var el = document.getElementById("site-stats");
+    if (el) el.textContent = "少女祈祷中…";
+  }
+
+  showLoading();
+  getShareToken().then(function(t) {
+    displaySiteStats(t.websiteId, t.token);
+  })["catch"](function(e) {
+    console.error("Umami token error:", e);
+    var el = document.getElementById("site-stats");
+    if (el) el.textContent = "統計暫不可用";
+  });
+
+  window.__umamiStats = {
+    cfg: cfg,
+    getShareToken: getShareToken,
+    fetchPageviews: fetchPageviews
+  };
+})();
+</script>
