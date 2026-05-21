@@ -5,11 +5,24 @@
 baseURL = "/"
 defaultContentLanguage = "zh-TW"
 
-theme = ["blowfish"]
-
 [module]
   [[module.imports]]
     path = "github.com/nunocoracao/blowfish/v2"
+    [[module.imports.mounts]]
+      source = "layouts"
+      target = "layouts"
+    [[module.imports.mounts]]
+      source = "assets"
+      target = "assets"
+    [[module.imports.mounts]]
+      source = "i18n"
+      target = "i18n"
+    [[module.imports.mounts]]
+      source = "static"
+      target = "static"
+    [[module.imports.mounts]]
+      source = "archetypes"
+      target = "archetypes"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
