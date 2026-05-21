@@ -1,5 +1,5 @@
-languageCode = "zh-TW"
-languageName = "正體字"
+locale = "zh-TW"
+label = "正體字"
 weight = 3
 title = "Dahi Open Tech"
 

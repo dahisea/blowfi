@@ -1,5 +1,5 @@
-languageCode = "zh-SG"
-languageName = "简体字"
+locale = "zh-SG"
+label = "简体字"
 weight = 2
 title = "Dahi Open Tech"
 

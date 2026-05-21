@@ -147,40 +147,35 @@
   }
 })();
 
-/* ---- S2T: simplified↔traditional with visual badge ---- */
+/* ---- S2T: simplified↔traditional Chinese ---- */
 (function() {
   var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
   if (!lang.match(/^zh(-|$)/)) return;
 
-  var inZhSg = /^\/zh-sg(\/|$)/.test(location.pathname);
-  var ctx = window.__s2tCtx || {};
+  var pageIsHant = !lang.match(/hans|cn|sg|my|chs/);
+  var HANT = 'hant', HANS = 'hans';
+  var ctx = { mode: null, maps: null };
 
-  function resolveMode() {
-    var pref = ctx.mode;
-    if (pref === 'fan' || pref === 'shu') return pref;
-    return inZhSg ? 'shu' : 'fan';
+  function loadPref() {
+    try { var v = JSON.parse(localStorage.getItem('__s2t') || '{}').mode; if (v) ctx.mode = v; } catch(e) {}
   }
+  function savePref() { try { localStorage.setItem('__s2t', JSON.stringify({ mode: ctx.mode })); } catch(e) {} }
 
-  var style = document.createElement('style');
-  style.textContent = 'body{visibility:hidden}';
-  document.head.appendChild(style);
+  loadPref();
 
   function buildMaps(text) {
-    var s2t = {}, t2s = {}, lines = text.split('\n'), i, p;
-    for (i = 0; i < lines.length; i++) {
-      p = lines[i].split(',');
-      if (p.length === 2) {
-        var t = p[0].trim(), s = p[1].trim();
-        if (t && s && t !== s) { s2t[s] = t; t2s[t] = s; }
-      }
-    }
-    window.__s2tMap = s2t;
-    window.__t2sMap = t2s;
+    var s2t = {}, t2s = {};
+    text.split('\n').forEach(function(line) {
+      var p = line.split(','), t = (p[0]||'').trim(), s = (p[1]||'').trim();
+      if (t && s && t !== s) { s2t[s] = t; t2s[t] = s; }
+    });
     ctx.maps = { s2t: s2t, t2s: t2s };
+    window.__s2tMaps = ctx.maps;
   }
 
-  function walk(root, map) {
-    var stack = [root], el, i, node, text, out, ch, tag;
+  function convert(root, map) {
+    if (!map) return;
+    var stack = [root], el, i, node, text, out, ch;
     while (stack.length) {
       el = stack.pop();
       if (el.nodeType === 3) {
@@ -188,86 +183,77 @@
         for (i = 0; i < text.length; i++) { ch = text[i]; out += map[ch] || ch; }
         if (out !== text) el.nodeValue = out;
       } else if (el.nodeType === 1) {
-        tag = el.nodeName;
-        if (/^(SCRIPT|STYLE|TEXTAREA|PRE|CODE)$/.test(tag)) continue;
+        if (/^(SCRIPT|STYLE|TEXTAREA|PRE|CODE)$/.test(el.nodeName)) continue;
         node = el.firstChild;
         while (node) { stack.push(node); node = node.nextSibling; }
       }
     }
   }
 
-  function applyMode(mode) {
-    var isFan = mode === 'fan';
-    var map = isFan ? ctx.maps.s2t : ctx.maps.t2s;
-    if (document.body) {
-      if (map) walk(document.body, map);
-      document.body.style.visibility = 'visible';
-    } else {
-      document.addEventListener('DOMContentLoaded', function() {
-        if (map) walk(document.body, map);
-        document.body.style.visibility = 'visible';
+  function apply(mode) {
+    var map = mode === HANT ? ctx.maps.s2t : ctx.maps.t2s;
+    var needHide = mode === HANT && map;
+    var hideStyle;
+    if (needHide) {
+      hideStyle = document.createElement('style');
+      hideStyle.textContent = 'body{visibility:hidden}';
+      document.head.appendChild(hideStyle);
+    }
+    function run() {
+      if (map) convert(document.body, map);
+      if (hideStyle) { document.body.style.visibility = 'visible'; hideStyle.remove(); }
+      refreshIndicator();
+    }
+    if (document.body) run();
+    else document.addEventListener('DOMContentLoaded', run);
+  }
+
+  function refreshIndicator() {
+    var active = defaultMode();
+    document.querySelectorAll('#s2t-toggle [data-s2t]').forEach(function(el) {
+      el.classList.toggle('font-semibold', el.getAttribute('data-s2t') === active);
+    });
+  }
+
+  function setupToggle() {
+    document.querySelectorAll('#s2t-toggle [data-s2t]').forEach(function(el) {
+      el.setAttribute('role','button');
+      el.setAttribute('tabindex','0');
+      el.addEventListener('click', function() {
+        ctx.mode = el.getAttribute('data-s2t');
+        savePref();
+        apply(ctx.mode);
       });
+    });
+    refreshIndicator();
+  }
+
+  function defaultMode() { return ctx.mode || (pageIsHant ? HANT : HANS); }
+
+  function init(maps) {
+    ctx.maps = maps;
+    apply(defaultMode());
+    document.addEventListener('DOMContentLoaded', setupToggle);
+  }
+
+  if (ctx.maps || (window.__s2tMaps && window.__s2tMaps.s2t && window.__s2tMaps.t2s)) {
+    init(ctx.maps || window.__s2tMaps);
+  } else {
+    fetch(window.__s2tUrl || '/translate-owo.txt')
+      .then(function(r) { return r.text(); })
+      .then(function(text) { buildMaps(text); init(ctx.maps); })
+      .catch(function() {
+        document.body && (document.body.style.visibility = 'visible');
+      });
+  }
+
+  window.__s2t = {
+    get mode() { return defaultMode(); },
+    toggle: function() {
+      ctx.mode = defaultMode() === HANT ? HANS : HANT;
+      savePref();
+      apply(ctx.mode);
     }
-  }
-
-  function ensureBadge() {
-    if (document.getElementById('__s2t_badge')) return;
-    var b = document.createElement('button');
-    b.id = '__s2t_badge';
-    b.title = '简繁切换';
-    b.style.cssText = 'position:fixed;bottom:1rem;right:1rem;z-index:9999;width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid #d4d4d8;background:var(--bg,#fff);color:var(--fg,#333);font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:.75;transition:opacity .2s;box-shadow:0 2px 8px rgba(0,0,0,.12)';
-    b.onmouseover = function() { b.style.opacity = '1'; };
-    b.onmouseout  = function() { b.style.opacity = '.75'; };
-    b.onclick = function() {
-      ctx.mode = ctx.mode === 'fan' ? 'shu' : 'fan';
-      ctx.persist = true;
-      try { localStorage.setItem('__s2t', JSON.stringify({ mode: ctx.mode })); } catch(e) {}
-      applyMode(ctx.mode);
-      updateBadge(ctx.mode);
-    };
-    document.body.appendChild(b);
-  }
-
-  function updateBadge(mode) {
-    var b = document.getElementById('__s2t_badge');
-    if (b) b.textContent = mode === 'fan' ? '繁' : '简';
-  }
-
-  function init() {
-    var maps = window.__s2tMap && window.__t2sMap
-      ? { s2t: window.__s2tMap, t2s: window.__t2sMap }
-      : ctx.maps;
-
-    if (maps) {
-      ctx.maps = maps;
-      var mode = resolveMode();
-      applyMode(mode);
-      ensureBadge();
-      updateBadge(mode);
-    } else {
-      fetch(window.__s2tUrl || '/translate-owo.txt')
-        .then(function(r) { return r.text(); })
-        .then(function(text) { buildMaps(text); })
-        .then(function() {
-          var mode = resolveMode();
-          applyMode(mode);
-          ensureBadge();
-          updateBadge(mode);
-        })
-        .catch(function() {
-          document.body && (document.body.style.visibility = 'visible');
-          document.addEventListener('DOMContentLoaded', function() { document.body.style.visibility = 'visible'; });
-        });
-    }
-  }
-
-  // restore persisted preference
-  try {
-    var saved = JSON.parse(localStorage.getItem('__s2t') || '{}');
-    if (saved.mode) { ctx.mode = saved.mode; ctx.persist = true; }
-  } catch(e) {}
-
-  window.__s2tCtx = ctx;
-  init();
+  };
 })();
 </script>
