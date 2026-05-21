@@ -47,7 +47,7 @@
    pageRef = "tags"
    weight = 10
 
- [[footer]]
-   name = "DNS"
-   pageRef = "DNS"
-   weight = 20
+  [[footer]]
+    name = "DNS"
+    pageRef = "dns"
+    weight = 20

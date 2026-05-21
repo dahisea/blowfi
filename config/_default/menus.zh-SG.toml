@@ -34,5 +34,5 @@
 
  [[footer]]
    name = "DNS"
-   pageRef = "DNS"
+   pageRef = "dns"
    weight = 20
