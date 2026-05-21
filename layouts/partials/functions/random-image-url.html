@@ -1,8 +1,11 @@
 {{ $url := . }}
-{{ if not $url }}{{ return $url }}{{ end }}
-{{ $cacheBuster := delimit (shuffle (split "abcdefghijklmnopqrstuvwxyz0123456789" "")) "" | truncate 10 "" }}
-{{ if strings.Contains $url "?" }}
-  {{ return (printf "%s&t=%s" $url $cacheBuster) }}
-{{ else }}
-  {{ return (printf "%s?t=%s" $url $cacheBuster) }}
-{{ end }}
+{{- if not $url -}}
+  {{- $url -}}
+{{- else -}}
+  {{- $cacheBuster := delimit (shuffle (split "abcdefghijklmnopqrstuvwxyz0123456789" "")) "" | truncate 10 "" -}}
+  {{- if strings.Contains $url "?" -}}
+    {{- printf "%s&t=%s" $url $cacheBuster -}}
+  {{- else -}}
+    {{- printf "%s?t=%s" $url $cacheBuster -}}
+  {{- end -}}
+{{- end -}}
