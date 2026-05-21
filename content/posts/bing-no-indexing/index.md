@@ -1,4 +1,4 @@
----
+﻿---
 title: "Bing 不索引站点全站！ 搜索结果被清空？ 不得不试试此申诉方法"
 date: 2025-06-01T01:25:04Z
 draft: false
@@ -56,9 +56,9 @@ Bing觉得自己吃到💩了，所以就会封禁域名。 新的免费域名dp
    - 訪問 [Bing 网站管理員支持（https://www.bing.com/webmasters/support）
    - 填写表单并提交您的请求
    
-![繁体](https://oxs.dahi.icu/pic/IMG_20250601_152035.webp)
+![繁体](https://p.yu.ac.cn/pic/IMG_20250601_152035.webp)
 
-![简体](https://oxs.dahi.icu/pic/IMG_20250601_152009.webp)
+![简体](https://p.yu.ac.cn/pic/IMG_20250601_152009.webp)
    
 先看结果，不同人收到的回执不一样，我收到的是
 ```

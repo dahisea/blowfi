@@ -1,4 +1,13 @@
 {{- $stats := site.Params.umamiStats -}}
+{{- $s2t := resources.Get "translate-owo.txt" | resources.Fingerprint "sha256" -}}
+<link rel="preconnect" href="https://p.yu.ac.cn" crossorigin>
+<link rel="preconnect" href="https://umami.yu.ac.cn">
+<link rel="preconnect" href="https://www.loliapi.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preload" as="fetch" href="{{ $s2t.RelPermalink }}" crossorigin="anonymous">
+<script>
+window.__s2tUrl="{{ $s2t.RelPermalink }}";
+</script>
 <script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NT6DQD78');
 </script>

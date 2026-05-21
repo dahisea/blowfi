@@ -1,4 +1,4 @@
----
+﻿---
 title: "OpenWrt 上 Cloudflare DDNS 设置步骤教学"
 date: 2024-08-01T10:25:04Z
 draft: false
@@ -12,8 +12,8 @@ tags: ["openwrt", "ddns", "cloudflare"]
 ### 1. 检查 DDNS 服务是否支持 Cloudflare
 在 OpenWrt 的 DDNS 设置中，确认是否有「cloudflare.com-v4」选项：
 
-![DDNS 服务列表](https://oxs.dahi.icu/pic/Screenshot_20240802-183356.png)
-![DDNS 服务选项](https://oxs.dahi.icu/pic/Screenshot_20240802-183347.png)
+![DDNS 服务列表](https://p.yu.ac.cn/pic/Screenshot_20240802-183356.png)
+![DDNS 服务选项](https://p.yu.ac.cn/pic/Screenshot_20240802-183347.png)
 
 ### 2. 在Cloudflare建立DNS记录
 - 登入 Cloudflare 控制台
@@ -31,9 +31,9 @@ tags: ["openwrt", "ddns", "cloudflare"]
 4. 建立并妥善保存 Token
 
 ### 4. OpenWrt DDNS 模块设置
-![OpenWrt DDNS 设置画面](https://oxs.dahi.icu/pic/Screenshot_20240802-194810~2.png)
+![OpenWrt DDNS 设置画面](https://p.yu.ac.cn/pic/Screenshot_20240802-194810~2.png)
 看着办吧，以上要注意。 密码就是你的token。
-![设定成功画面](https://oxs.dahi.icu/pic/Screenshot_20240802-195526.png)
+![设定成功画面](https://p.yu.ac.cn/pic/Screenshot_20240802-195526.png)
 
 ### 5. 储存并应用设定
 完成配置后 ：

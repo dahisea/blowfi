@@ -1,4 +1,4 @@
----
+﻿---
 title: "友人"
 draft: false
 description: "一些朋友"
@@ -21,7 +21,7 @@ Dahi Blog
 
 
 ## Avatar
-[https://oxs.dahi.icu/pic/avatar.png](https://oxs.dahi.icu/pic/avatar.png)
+[https://p.yu.ac.cn/pic/avatar.png](https://p.yu.ac.cn/pic/avatar.png)
 
 
 ## Link
