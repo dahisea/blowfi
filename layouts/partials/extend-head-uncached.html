@@ -149,8 +149,10 @@
 
 /* ---- S2T: simplified↔traditional Chinese ---- */
 (function() {
-  var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-  if (!lang.match(/^zh(-|$)/)) return;
+  var path = location.pathname;
+  var inZhSg = /^\/zh-sg(\/|$)/.test(path);
+  var pageIsHant = !inZhSg;
+  console.log('[S2T] path=' + path + ' zhSg=' + inZhSg + ' isHant=' + pageIsHant);
 
   var pageIsHant = !lang.match(/hans|cn|sg|my|chs/);
   var HANT = 'hant', HANS = 'hans';
@@ -169,6 +171,8 @@
       var p = line.split(','), t = (p[0]||'').trim(), s = (p[1]||'').trim();
       if (t && s && t !== s) { s2t[s] = t; t2s[t] = s; }
     });
+    var cnt = Object.keys(s2t).length;
+    console.log('[S2T] maps built, ' + cnt + ' pairs');
     ctx.maps = { s2t: s2t, t2s: t2s };
     window.__s2tMaps = ctx.maps;
   }
@@ -191,6 +195,7 @@
   }
 
   function apply(mode) {
+    console.log('[S2T] apply mode=' + mode + ' pageIsHant=' + pageIsHant);
     var map = mode === HANT ? ctx.maps.s2t : ctx.maps.t2s;
     var needHide = mode === HANT && map;
     var hideStyle;
@@ -202,6 +207,7 @@
     function run() {
       if (map) convert(document.body, map);
       if (hideStyle) { document.body.style.visibility = 'visible'; hideStyle.remove(); }
+      console.log('[S2T] conversion done');
       refreshIndicator();
     }
     if (document.body) run();
@@ -237,12 +243,16 @@
   }
 
   if (ctx.maps || (window.__s2tMaps && window.__s2tMaps.s2t && window.__s2tMaps.t2s)) {
+    console.log('[S2T] using cached maps');
     init(ctx.maps || window.__s2tMaps);
   } else {
-    fetch(window.__s2tUrl || '/translate-owo.txt')
+    var url = window.__s2tUrl || '/translate-owo.txt';
+    console.log('[S2T] fetching maps from ' + url);
+    fetch(url)
       .then(function(r) { return r.text(); })
       .then(function(text) { buildMaps(text); init(ctx.maps); })
-      .catch(function() {
+      .catch(function(e) {
+        console.error('[S2T] fetch failed: ' + e.message);
         document.body && (document.body.style.visibility = 'visible');
       });
   }
