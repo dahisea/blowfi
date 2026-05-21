@@ -101,9 +101,11 @@
     scanAndProcess();
   }
 
-  new MutationObserver(function() {
-    scanAndProcess();
-  }).observe(document.body, { subtree: true, childList: true, attributes: false });
+  if (document.body) {
+    new MutationObserver(function() {
+      scanAndProcess();
+    }).observe(document.body, { subtree: true, childList: true, attributes: false });
+  }
 })();
 
 /* ---- geo-block: hide pages/cards for specific countries ---- */
