@@ -1,20 +1,20 @@
 locale = "zh-TW"
 label = "正體字"
 weight = 3
-title = "Dahi Open Tech"
+title = "Dahi — 開源技術與雲端基礎設施"
 
 [params]
   displayName = "正體"
   isoCode = "zh-TW"
   rtl = false
   dateFormat = "2006-01-02"
-  description = "Welcome to Dahi Blog"
+  description = "專注於 Linux、Cloudflare、OpenWrt、DNS 調優與開源基礎設施的技術部落格。由 Dahi 維護。"
 
 [author]
   name = "Dahi"
   image = "https://img3.tapimg.com/avatars/etag/FrXPfpRN0pwF5SuiQ7MIPO3BXdkK.png"
-  headline = "ようこそ"
-  bio = "Studying"
+  headline = "基礎設施 / 雲端優化 / 開源"
+  bio = "Cloudflare, DNS & Infrastructure Engineer"
   links = [
     { github = "https://github.com/dahisea" }
   ]

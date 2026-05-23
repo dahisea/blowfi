@@ -40,11 +40,11 @@ smartTOC = true
   showScrollToTop = true
 
 [homepage]
-  layout = "background"
-  showMoreLink = true
-  showMoreLinkDest = "/posts"
-  cardView = false
-  layoutBackgroundBlur = false # only used when layout equals background
+  layout = "profile"
+  showRecent = true
+  showRecentItems = 6
+  cardView = true
+  cardViewScreenWidth = false
 
 [article]
   showDate = true
