@@ -1,5 +1,4 @@
 ---
-title: "Dahi"
 description: "专注 Linux 基础设施、Cloudflare 调优、OpenWrt、DNS 与开源技术的个人博客"
 ---
 
