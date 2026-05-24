@@ -1,14 +1,8 @@
 ---
-description: "专注 Linux 基础设施、Cloudflare 调优、OpenWrt、DNS 与开源技术的个人博客"
+description: "Dahi 独立运营的技术博客 — 专注 Linux 基础设施、Cloudflare CDN 与 WAF 调优、OpenWrt 固件定制、DNS 优化、网络安全与开源技术实战分享"
+keywords: [Linux, Cloudflare, OpenWrt, DNS, 基础设施, CDN, WAF, 技术博客, 开源, 网络优化]
 ---
 
-## 关于本站
+深耕 **Cloudflare CDN 与 WAF 安全调优**、**OpenWrt 固件定制**、**DNS 解析优化** 及 **Linux 基础设施运维**。
 
-由 Dahi 独立运营的技术站点，专注于：
-
-- **Cloudflare** — CDN 配置、WAF 规则、边缘加速与错误排错
-- **OpenWrt** — 路由器固件调优、DDNS、网络定制
-- **DNS** — 公共 DNS 反代、DoH/DoT 部署
-- **基础设施** — Linux 运维、Git 工作流、CI/CD
-
-文章源于实战，简明直接。站点接受赞助与广告合作，有意请联络。
+文章源于生产环境实战，简洁直接，不水文。站点月均浏览量稳定增长，欢迎技术赞助与广告合作。

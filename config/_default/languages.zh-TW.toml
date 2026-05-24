@@ -13,7 +13,7 @@ title = "Dahi — 開源技術與雲端基礎設施"
 [author]
   name = "Dahi"
   image = "https://img3.tapimg.com/avatars/etag/FrXPfpRN0pwF5SuiQ7MIPO3BXdkK.png"
-  headline = "基礎設施 / 雲端優化 / 開源"
+  headline = "Cloudflare 調優 · OpenWrt 定制 · DNS 加速 · Linux 基礎設施"
   bio = "Cloudflare, DNS & Infrastructure Engineer"
   links = [
     { github = "https://github.com/dahisea" }

@@ -19,8 +19,11 @@ disableTextInHeader = false
 hotlinkFeatureImage = true
 fingerprintAlgorithm = "sha512"
 
+keywords = ["Linux", "Cloudflare", "OpenWrt", "DNS", "CDN", "WAF", "基础设施", "网络优化", "技术博客", "开源", "网络"]
+
 defaultBackgroundImage = "https://www.loliapi.com/acg/pe/"
 defaultFeaturedImage = "https://www.loliapi.com/acg/pc/"
+defaultSocialImage = "https://img3.tapimg.com/avatars/etag/FrXPfpRN0pwF5SuiQ7MIPO3BXdkK.png"
 
 highlightCurrentMenuArea = true
 smartTOC = true
@@ -50,11 +53,12 @@ smartTOC = true
   showScrollToTop = true
 
 [homepage]
-  layout = "profile"
+  layout = "background"
   showRecent = true
-  showRecentItems = 6
+  showRecentItems = 8
   cardView = true
   cardViewScreenWidth = false
+  layoutBackgroundBlur = false
 
 [article]
   showDate = true
