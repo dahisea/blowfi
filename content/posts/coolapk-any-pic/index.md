@@ -2,7 +2,7 @@
 title: "分析一个两年前发现的酷安社区漏洞，无视图片外链域限制发帖"
 date: 2025-06-04T09:25:04Z
 draft: false
-description: "无视图片外链域限制发帖"
+description: "酷安社区图片外链漏洞深度分析：绕过域名限制发帖的原理、利用方式与安全修复建议"
 tags: ["coolapk", "bug"]
 ---
 

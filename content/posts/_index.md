@@ -1,6 +1,6 @@
 ---
 title: "記事"
-description: "因备战高考，暂时决定无限期停更"
+description: "Linux、Cloudflare、OpenWrt、DNS 优化与开源基础设施技术文章汇总"
 
 cascade:
   showDate: true

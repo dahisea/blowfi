@@ -2,7 +2,7 @@
 title: "GitHub与Git的邮箱地址设置，Github 提交真实邮箱查看"
 date: 2024-04-10T01:25:04Z
 draft: false
-description: "保护方式"
+description: "GitHub Git 邮箱地址隐私设置教程：隐藏真实邮箱免遭泄露、保护提交记录及配置方法详解"
 tags: ["gal", "mail"]
 ---
 众所周知，git的commit信息往往包含信箱等数据，似乎官方不会主动处理开启Private信箱账号的git内容

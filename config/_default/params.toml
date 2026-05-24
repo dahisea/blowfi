@@ -28,6 +28,16 @@ smartTOC = true
 
 [seo]
   metaDescriptionOrder = ["summary", "description", "site"]
+  og_locale = "zh_TW"
+  og_image = "/images/social-card.png"
+  twitter_card = "summary_large_image"
+  twitter_site = "@dahisea"
+  twitter_creator = "@dahisea"
+  schema_type = "Blog"
+  schema_author = "Dahi"
+  schema_publisher = "Dahi"
+  schema_logo = "/images/social-card.png"
+  schema_image = "/images/social-card.png"
 
 [header]
   layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
@@ -58,34 +68,14 @@ smartTOC = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
-  showBreadcrumbs = false
-  showDraftLabel = true
-  showEdit = false
-  # editURL = "https://github.com/username/repo/"
-  editAppendPath = true
-  seriesOpened = true
-  showHeadingAnchors = true
-  showPagination = true
-  invertPagination = false
-  showReadingTime = true
-  showTableOfContents = true
-  showTaxonomies = true
-  showCategories = true
-  showTags = true
-  showAuthorsBadges = false
-  showWordCount = true
-  showRelatedContent = false
-  relatedContentLimit = 3
-  sharingLinks = [ "linkedin", "twitter", "bluesky", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
-  showZenMode = true
-  showComments = true
+  showBreadcrumbs = true
 
 [list]
   showHero = true
   heroStyle = "background"
   layoutBackgroundBlur = true
   layoutBackgroundHeaderSpace = true
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showSummary = false
   showViews = true
   showLikes = false
@@ -104,7 +94,7 @@ smartTOC = true
   showTermCount = true
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showViews = true
   showLikes = false
   showTableOfContents = false
@@ -113,7 +103,7 @@ smartTOC = true
 [term]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showViews = true
   showLikes = false
   showTableOfContents = true
@@ -173,7 +163,8 @@ smartTOC = true
   adsense = "ca-pub-3758644447684310"
 
 [verification]
-  # google = ""
-  # bing = ""
-  # pinterest = ""
-  # yandex = ""
+  # google = "YOUR_GOOGLE_SEARCH_CONSOLE_CODE"
+  # bing = "YOUR_BING_WEBMASTER_CODE"
+  # baidu = "YOUR_BAIDU_VERIFICATION_CODE"
+  # yandex = "YOUR_YANDEX_CODE"
+  # pinterest = "YOUR_PINTEREST_CODE"

@@ -2,7 +2,7 @@
 title: "小米路由器4A千兆版最新款（r4av2）Openwrt 刷入教程"
 date: 2023-05-19T01:25:04Z
 draft: false
-description: "教程"
+description: "小米路由器 4A 千兆版 r4av2 OpenWrt 刷机教程：固件下载、刷入步骤、救砖方法及常见踩坑避坑"
 tags: ["路由", "openwrt"]
 ---
 

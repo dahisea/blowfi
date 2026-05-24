@@ -2,7 +2,7 @@
 title: "2025年中國內地 Cloudflare DNS over HTTPS (DoH) 使用教程"
 date: 2025-06-01T03:25:04Z
 draft: false
-description: "分享CF的DNS访问方法"
+description: "2025年国内 Cloudflare DoH/DNS over HTTPS 使用教程：可用端点、配置方法与中国大陆网络环境故障排除"
 tags: ["dns", "cloudflare"]
 ---
 

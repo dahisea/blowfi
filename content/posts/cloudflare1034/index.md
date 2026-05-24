@@ -2,7 +2,7 @@
 title: "Cloudflare 报错1034错误"
 date: 2021-07-20T03:25:04Z
 draft: false
-description: "加速"
+description: "Cloudflare 1034 错误代码原因与解决方法：IP 限制、WAF 规则排查、DNS 配置修复全攻略"
 tags: ["cloud"]
 ---
 ### **Cloudflare 1034 错误详解：网站管理员设定问题及解决方案**  

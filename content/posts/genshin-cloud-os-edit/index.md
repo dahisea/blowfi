@@ -2,7 +2,7 @@
 title: "云原神国际版服务器"
 date: 2024-08-10T01:25:04Z
 draft: false
-description: ""
+description: "云原神国际版服务器配置指南：跨区游玩方法、网络优化技巧与延迟降低方案"
 tags: ["game", "genshin"]
 ---
 国际版延时高，进不去

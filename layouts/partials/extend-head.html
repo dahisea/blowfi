@@ -1,5 +1,22 @@
 {{- $stats := site.Params.umamiStats -}}
 {{- $s2t := resources.Get "translate-owo.txt" | resources.Fingerprint "sha256" -}}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "Dahi",
+    "url": "https://dahi.icu",
+    "sameAs": ["https://github.com/dahisea"]
+  }
+}
+</script>
 <link rel="preconnect" href="https://p.yu.ac.cn" crossorigin>
 <link rel="preconnect" href="https://umami.yu.ac.cn">
 <link rel="preconnect" href="https://www.loliapi.com">

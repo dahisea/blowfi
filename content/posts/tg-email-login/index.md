@@ -2,7 +2,7 @@
 title: "Telegram 启用邮箱地址登录验证的方法"
 date: 2023-09-27T09:25:04Z
 draft: false
-description: "電子郵箱"
+description: "Telegram 启用邮箱地址登录验证教程：安全设置、两步验证配置与账号保护技巧"
 tags: ["mail", "tg"]
 ---
 #### **1. 功能说明**  

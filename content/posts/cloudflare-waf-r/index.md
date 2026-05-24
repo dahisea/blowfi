@@ -2,7 +2,7 @@
 title: "Cloudflare 安全规则，防机器人和扫描，防黑AS"
 date: 2025-06-01T00:25:04Z
 draft: false
-description: "分享安全规则"
+description: "Cloudflare WAF 安全规则配置教程：防机器人、恶意扫描与黑名单 AS 防护，保护网站免遭攻击"
 tags: ["cloudflare", "waf"]
 ---
 

@@ -2,7 +2,7 @@
 title: "OpenWrt 上 Cloudflare DDNS 设置步骤教学"
 date: 2024-08-01T10:25:04Z
 draft: false
-description: "在 OpenWrt 上设定 Cloudflare 动态 DNS 解析"
+description: "OpenWrt 路由器 Cloudflare DDNS 动态 DNS 配置教程：脚本设置、域名自动更新与公网 IP 解析"
 tags: ["openwrt", "ddns", "cloudflare"]
 
 ---

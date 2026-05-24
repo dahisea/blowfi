@@ -2,7 +2,7 @@
 title: "Tyranor 模拟器 Kirikiri 字号设置"
 date: 2024-04-20T09:25:04Z
 draft: false
-description: "一种大小调节方式"
+description: "Tyranor 模拟器 Kirikiri 引擎文字字号调整教程：字体大小修改、显示优化与常见问题解决"
 tags: ["gal", "krkr"]
 ---
 ## patch.tjs

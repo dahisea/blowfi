@@ -2,7 +2,7 @@
 title: "Bing 不索引站点全站！ 搜索结果被清空？ 不得不试试此申诉方法"
 date: 2025-06-01T01:25:04Z
 draft: false
-description: "分享经验"
+description: "Bing 不索引网站？搜索结果被清空？完整申诉指南：验证站点所有权、提交索引请求与恢复搜索排名的解决方案"
 tags: ["bing", "search"]
 ---
 
