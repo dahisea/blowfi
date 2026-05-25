@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bing on Dahi — 開源技術與雲端基礎設施</title><link>https://dahi.icu/tags/bing/</link><description>Recent content in Bing on Dahi — 開源技術與雲端基礎設施</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Sun, 01 Jun 2025 01:25:04 +0000</lastBuildDate><atom:link href="https://dahi.icu/tags/bing/index.xml" rel="self" type="application/rss+xml"/><item><title>Bing 不索引站点全站！ 搜索结果被清空？ 不得不试试此申诉方法</title><link>https://dahi.icu/posts/bing-no-indexing/</link><pubDate>Sun, 01 Jun 2025 01:25:04 +0000</pubDate><guid>https://dahi.icu/posts/bing-no-indexing/</guid><description>&lt;h1 class="relative group"&gt;Bing也是神人了
+ &lt;div id="bing也是神人了" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#bing%e4%b9%9f%e6%98%af%e7%a5%9e%e4%ba%ba%e4%ba%86" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+
+&lt;h2 class="relative group"&gt;前言
+ &lt;div id="前言" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%89%8d%e8%a8%80" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;有一天，我的站点突然被清空全部搜索结果。 Bing作为我站唯一的访客来源，突然就死了。&lt;/p&gt;
+&lt;p&gt;出现这种情况的原因是，我建立了某个网站的映像，而Bing不按robots.txt索引网站，而导致违规内容（其实我反代的网站就是违规网站，Bing不收的那种）被侦测到。
+Bing觉得自己吃到💩了，所以就会封禁域名。 新的免费域名dpdnsorg那个就是因一些网友的抽象行为被Bing封锁（个人观点）。 indexnow也救不了。&lt;/p&gt;
+
+&lt;h3 class="relative group"&gt;当时的具体表现为：
+ &lt;div id="当时的具体表现为" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%bd%93%e6%97%b6%e7%9a%84%e5%85%b7%e4%bd%93%e8%a1%a8%e7%8e%b0%e4%b8%ba" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;在bing网站管理员后台提交url索引申请，无理由爆红（无法编制），而手动索引表现出bing可正常抓取。&lt;/p&gt;
+
+&lt;h1 class="relative group"&gt;Bing 管理员申诉网站不索引的完整教程（AI辅助创作）
+ &lt;div id="bing-管理员申诉网站不索引的完整教程ai辅助创作" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#bing-%e7%ae%a1%e7%90%86%e5%91%98%e7%94%b3%e8%af%89%e7%bd%91%e7%ab%99%e4%b8%8d%e7%b4%a2%e5%bc%95%e7%9a%84%e5%ae%8c%e6%95%b4%e6%95%99%e7%a8%8bai%e8%be%85%e5%8a%a9%e5%88%9b%e4%bd%9c" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+&lt;p&gt;当您的网站未被 Bing 索引或从索引中消失时，可以通过 Bing 网站管理员工具进行申诉。 以下是详细步骤：&lt;/p&gt;</description></item><item><title>必应搜索引擎设置</title><link>https://dahi.icu/posts/bing-global/</link><pubDate>Mon, 20 Mar 2023 03:25:04 +0000</pubDate><guid>https://dahi.icu/posts/bing-global/</guid><description>&lt;h2 class="relative group"&gt;日本
+ &lt;div id="日本" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%97%a5%e6%9c%ac" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://global.bing.com/search?q=%@&amp;amp;cc=jp&amp;amp;setlang=zh&amp;amp;setmkt=ja-jp&amp;amp;mkt=ja-jp&amp;amp;adlt=off&amp;amp;setadlt=off&amp;amp;qs=n&amp;amp;FORM=HDRSC1&amp;amp;sp=2&amp;amp;pq=123&amp;amp;sk=HS2&amp;amp;sc=10-2&amp;amp;cvid=0000&amp;amp;lq=1&amp;amp;ghc=1&amp;amp;ghsh=0&amp;amp;ghacc=0&amp;amp;ghpl=&amp;amp;ubiroff=1&amp;amp;toWww=1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;台湾
+ &lt;div id="台湾" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%b0%e6%b9%be" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://global.bing.com/search?q=%@&amp;amp;cc=tw&amp;amp;setlang=zh&amp;amp;setmkt=zh-tw&amp;amp;mkt=zh-tw&amp;amp;adlt=off&amp;amp;setadlt=off&amp;amp;qs=n&amp;amp;FORM=HDRSC1&amp;amp;sp=2&amp;amp;pq=123&amp;amp;sk=HS2&amp;amp;sc=10-2&amp;amp;cvid=0000&amp;amp;lq=1&amp;amp;ghc=1&amp;amp;ghsh=0&amp;amp;ghacc=0&amp;amp;ghpl=&amp;amp;ubiroff=1&amp;amp;toWww=1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;香港
+ &lt;div id="香港" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e9%a6%99%e6%b8%af" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://global.bing.com/search?q=%@&amp;amp;cc=hk&amp;amp;setlang=zh&amp;amp;setmkt=zh-hk&amp;amp;mkt=zh-hk&amp;amp;adlt=off&amp;amp;setadlt=off&amp;amp;qs=n&amp;amp;FORM=HDRSC1&amp;amp;sp=2&amp;amp;pq=123&amp;amp;sk=HS2&amp;amp;sc=10-2&amp;amp;cvid=0000&amp;amp;lq=1&amp;amp;ghc=1&amp;amp;ghsh=0&amp;amp;ghacc=0&amp;amp;ghpl=&amp;amp;ubiroff=1&amp;amp;toWww=1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description></item></channel></rss>

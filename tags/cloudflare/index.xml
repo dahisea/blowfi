@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudflare on Dahi — 開源技術與雲端基礎設施</title><link>https://dahi.icu/tags/cloudflare/</link><description>Recent content in Cloudflare on Dahi — 開源技術與雲端基礎設施</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Sun, 01 Jun 2025 03:25:04 +0000</lastBuildDate><atom:link href="https://dahi.icu/tags/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>2025年中國內地 Cloudflare DNS over HTTPS (DoH) 使用教程</title><link>https://dahi.icu/posts/cloudflare-dns-any/</link><pubDate>Sun, 01 Jun 2025 03:25:04 +0000</pubDate><guid>https://dahi.icu/posts/cloudflare-dns-any/</guid><description>&lt;h1 class="relative group"&gt;Cloudflare DNS over HTTPS （DoH） 使用教程
+ &lt;div id="cloudflare-dns-over-https-doh-使用教程" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloudflare-dns-over-https-doh-%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+&lt;p&gt;Cloudflare 提供多种 DNS over HTTPS （DoH） 服务端点，包括标准 DNS、家庭保护 DNS 和安全 DNS 服务。
+而其附带的诸如ECH等各种功能，似是禁忌乐章。
+以下是详细使用教程。 来自中国内地的报告显示，Cloudflare的部分DNS网域已被封锁。但是封的居然不是全局，离谱了，用子域名就行。看来是开了后门。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;Cloudflare DoH
+ &lt;div id="cloudflare-doh" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloudflare-doh" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;Cloudflare 提供以下公共 DNS over HTTPS 端点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;标准 DNS&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://cloudflare-dns.com/dns-query&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;https://[任意子域].cloudflare-gateway.com/dns-query&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;家庭保护 DNS&lt;/strong&gt; （拦截恶意内容和成人内容）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://family.cloudflare-dns.com/dns-query&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;https://[任意子域].family.cloudflare-dns.com/dns-query&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;安全 DNS&lt;/strong&gt; （仅拦截恶意内容）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://security.cloudflare-dns.com/dns-query&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;https://[任意子域].security.cloudflare-dns.com/dns-query&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 class="relative group"&gt;浏览器直接配置
+ &lt;div id="浏览器直接配置" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e7%9b%b4%e6%8e%a5%e9%85%8d%e7%bd%ae" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;手动配置安全的DNS&lt;/p&gt;</description></item><item><title>Cloudflare 安全规则，防机器人和扫描，防黑AS</title><link>https://dahi.icu/posts/cloudflare-waf-r/</link><pubDate>Sun, 01 Jun 2025 00:25:04 +0000</pubDate><guid>https://dahi.icu/posts/cloudflare-waf-r/</guid><description>&lt;h1 class="relative group"&gt;我的三个Cloudflare WAF安全规则
+ &lt;div id="我的三个cloudflare-waf安全规则" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%88%91%e7%9a%84%e4%b8%89%e4%b8%aacloudflare-waf%e5%ae%89%e5%85%a8%e8%a7%84%e5%88%99" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+
+&lt;h2 class="relative group"&gt;前言
+ &lt;div id="前言" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%89%8d%e8%a8%80" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;在运营网站的过程中，Web应用防火墙(WAF)是保护站点安全的重要工具。今天我将发布两个在Cloudflare的WAF规则，希望能帮助到有需要的站长。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;规则 1: AS Byebye
+ &lt;div id="规则-1-as-byebye" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%a7%84%e5%88%99-1-as-byebye" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：无效流量，主要为服务器运营商as号码&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;规则详情&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;(ip.src.asnum in {174 195 209 577 792 793 794 965 1215 1216 1217 2497 2914 3223 3255 3269 3326 3329 3457 3462 3598 4184 4190 4637 4694 4755 4785 4788 4816 4826 4835 5056 5610 5617 6461 6471 6584 6830 6876 6877 6939 7029 7195 7203 7224 7303 7489 7552 7684 7713 7941 8068 8069 8070 8071 8074 8100 8220 8560 8796 8881 8987 9009 9123 9299 9312 9370 9534 9678 9952 9984 10026 10206 10453 11351 11426 11691 11878 12076 12271 12334 12367 12874 12876 12989 13335 13349 13965 14061 14117 14140 14576 14593 14618 16276 16509 16591 16629 17043 17428 17707 17788 17789 17790 17791 18013 18186 18228 18257 18403 18450 18599 18734 18779 18978 19148 19527 19740 19871 20207 20473 20552 20554 20853 20860 21704 21769 21859 21887 22552 22612 22616 22773 22884 23468 23724 23885 23959 23969 24088 24192 24424 24429 24940 25369 25429 25697 25820 25935 25961 26160 26496 26818 27715 28429 28431 28438 28725 28753 29066 29286 29287 29802 30083 30633 30823 31122 31235 31400 31898 32097 32098 32505 32613 34081 34248 34549 34947 35070 35212 35320 35540 35593 35804 35816 35908 35916 36351 36352 36384 36385 36444 36492 36599 36806 37148 37963 37969 38001 38197 38283 38365 38538 38587 38588 38627 39284 39486 39686 40065 40676 40788 41009 41096 41264 41378 42652 42905 43289 43513 43624 43989 44144 44477 45011 45012 45062 45075 45076 45085 45090 45102 45103 45104 45139 45458 45566 45576 45629 45753 45899 45932 46261 46484 46516 46606 46844 47232 47285 47583 47927 48024 48337 48905 49327 49367 49588 49981 50297 50304 50340 50495 50835 50837 51167 51290 51765 51852 52000 52228 52341 52393 52449 52485 53089 53667 54252 54463 54538 54574 54600 54801 54854 54994 55081 55158 55286 55330 55720 55799 55924 55933 55960 55967 55990 55992 56005 56011 56109 56222 57613 58073 58199 58461 58466 58519 58541 58543 58563 58593 58772 58773 58774 58775 58776 58777 58844 58854 58862 58879 59019 59025 59028 59048 59050 59051 59052 59053 59054 59055 59067 59077 59078 59253 59374 60068 60592 60631 60781 60798 61112 61138 61154 61317 61348 61577 61853 62044 62160 62240 62468 62785 62874 62904 63018 63023 63075 63288 63314 63545 63612 63620 63631 63655 63677 63678 63679 63727 63728 63729 63835 63838 63888 63916 63949 64050 64080 64267 64286 131090 131106 131138 131139 131140 131141 131293 131428 131444 131477 131486 131495 131571 132196 132203 132509 132510 132513 132591 132813 132817 132839 133024 133199 133380 133478 133492 133499 133746 133752 133774 133775 133776 133905 133929 133944 134238 134327 134420 134450 134756 134760 134761 134763 134764 134765 134766 134768 134769 134770 134771 134835 134963 135061 135290 135300 135330 135365 135377 135629 136195 136907 137017 137263 137280 137687 137693 137697 137698 137699 137718 137753 137784 137785 137787 137788 137876 137967 137969 138366 138407 138607 138915 138949 138950 138952 138982 138994 139007 139018 139124 139144 139201 139203 139220 139316 139327 139341 139462 139659 139726 139887 140096 140596 140701 140716 140717 140720 140723 140979 141157 141180 141771 141995 141998 142002 142570 142608 146817 149167 149428 150436 152194 152711 177453 177549 197099 197540 198047 198651 199490 199506 199524 199883 200373 200756 201035 201094 201106 201341 201978 202044 202053 202422 202496 202675 202914 203020 203061 203087 203098 203346 203999 204287 204601 204720 205544 205659 205964 206092 206204 206791 206798 207319 207400 207590 207990 208425 208556 209043 209366 209709 210644 210906 211914 212144 212329 212335 212384 212708 213230 213251 213375 215859 216071 262187 263022 263196 263639 263693 263740 264344 264509 265443 265537 266706 267784 269939 270110 328608 394380 394474 394699 394814 395003 395936 395954 395973 396356 396982 397391 397630 398101 398823} and not http.request.uri.path in {&amp;#34;/robots.txt&amp;#34; &amp;#34;/ads.txt&amp;#34;}) or (http.user_agent eq &amp;#34;&amp;#34;) or (any(http.request.headers[&amp;#34;accept-encoding&amp;#34;][*] eq &amp;#34;&amp;#34;)) or (not http.user_agent contains &amp;#34;bingbot&amp;#34; and ip.src.asnum eq 8075 and http.request.uri.path ne &amp;#34;/robots.txt&amp;#34;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 class="relative group"&gt;规则 2: AS Byebye
+ &lt;div id="规则-2-as-byebye" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e8%a7%84%e5%88%99-2-as-byebye" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：动态软件，本站为静态，动态访问都是robot，以及不科学的路径&lt;/p&gt;</description></item><item><title>OpenWrt 上 Cloudflare DDNS 设置步骤教学</title><link>https://dahi.icu/posts/openwrt-cf-ddns/</link><pubDate>Thu, 01 Aug 2024 10:25:04 +0000</pubDate><guid>https://dahi.icu/posts/openwrt-cf-ddns/</guid><description>&lt;h2 class="relative group"&gt;📌 Cloudflare DDNS 设置步骤
+ &lt;div id="-cloudflare-ddns-设置步骤" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#-cloudflare-ddns-%e8%ae%be%e7%bd%ae%e6%ad%a5%e9%aa%a4" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+
+&lt;h3 class="relative group"&gt;1. 检查 DDNS 服务是否支持 Cloudflare
+ &lt;div id="1-检查-ddns-服务是否支持-cloudflare" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-%e6%a3%80%e6%9f%a5-ddns-%e6%9c%8d%e5%8a%a1%e6%98%af%e5%90%a6%e6%94%af%e6%8c%81-cloudflare" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;在 OpenWrt 的 DDNS 设置中，确认是否有「cloudflare.com-v4」选项：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ fetchpriority="low"
+ alt="DDNS 服务列表"
+ src="https://p.yu.ac.cn/pic/Screenshot_20240802-183356.png"
+ &gt;&lt;/figure&gt;
+
+&lt;figure&gt;&lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ fetchpriority="low"
+ alt="DDNS 服务选项"
+ src="https://p.yu.ac.cn/pic/Screenshot_20240802-183347.png"
+ &gt;&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;h3 class="relative group"&gt;2. 在Cloudflare建立DNS记录
+ &lt;div id="2-在cloudflare建立dns记录" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#2-%e5%9c%a8cloudflare%e5%bb%ba%e7%ab%8bdns%e8%ae%b0%e5%bd%95" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;登入 Cloudflare 控制台&lt;/li&gt;
+&lt;li&gt;为你的域添加一笔 DNS 记录：
+&lt;ul&gt;
+&lt;li&gt;IPv4 请选择 A」记录&lt;/li&gt;
+&lt;li&gt;IPv6 请选择「AAAA」记录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;记录值可先随意设定，稍后会自动更新&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 class="relative group"&gt;3. 建立 Cloudflare API Token
+ &lt;div id="3-建立-cloudflare-api-token" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#3-%e5%bb%ba%e7%ab%8b-cloudflare-api-token" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;前往 [Cloudflare API Tokens 页面]（https://dash.cloudflare.com/profile/api-tokens）&lt;/li&gt;
+&lt;li&gt;选择「Create Token」→「Create custom token」&lt;/li&gt;
+&lt;li&gt;设定权限：
+&lt;ul&gt;
+&lt;li&gt;权限类型：Zone&lt;/li&gt;
+&lt;li&gt;权限设置：DNS → Edit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;建立并妥善保存 Token&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 class="relative group"&gt;4. OpenWrt DDNS 模块设置
+ &lt;div id="4-openwrt-ddns-模块设置" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#4-openwrt-ddns-%e6%a8%a1%e5%9d%97%e8%ae%be%e7%bd%ae" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ fetchpriority="low"
+ alt="OpenWrt DDNS 设置画面"
+ src="https://p.yu.ac.cn/pic/Screenshot_20240802-194810~2.png"
+ &gt;&lt;/figure&gt;
+
+看着办吧，以上要注意。 密码就是你的token。
+&lt;figure&gt;&lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ fetchpriority="low"
+ alt="设定成功画面"
+ src="https://p.yu.ac.cn/pic/Screenshot_20240802-195526.png"
+ &gt;&lt;/figure&gt;
+&lt;/p&gt;</description></item></channel></rss>

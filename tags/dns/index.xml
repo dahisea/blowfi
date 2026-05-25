@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dns on Dahi — 開源技術與雲端基礎設施</title><link>https://dahi.icu/tags/dns/</link><description>Recent content in Dns on Dahi — 開源技術與雲端基礎設施</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Sun, 01 Jun 2025 03:25:04 +0000</lastBuildDate><atom:link href="https://dahi.icu/tags/dns/index.xml" rel="self" type="application/rss+xml"/><item><title>2025年中國內地 Cloudflare DNS over HTTPS (DoH) 使用教程</title><link>https://dahi.icu/posts/cloudflare-dns-any/</link><pubDate>Sun, 01 Jun 2025 03:25:04 +0000</pubDate><guid>https://dahi.icu/posts/cloudflare-dns-any/</guid><description>&lt;h1 class="relative group"&gt;Cloudflare DNS over HTTPS （DoH） 使用教程
+ &lt;div id="cloudflare-dns-over-https-doh-使用教程" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloudflare-dns-over-https-doh-%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h1&gt;
+&lt;p&gt;Cloudflare 提供多种 DNS over HTTPS （DoH） 服务端点，包括标准 DNS、家庭保护 DNS 和安全 DNS 服务。
+而其附带的诸如ECH等各种功能，似是禁忌乐章。
+以下是详细使用教程。 来自中国内地的报告显示，Cloudflare的部分DNS网域已被封锁。但是封的居然不是全局，离谱了，用子域名就行。看来是开了后门。&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;Cloudflare DoH
+ &lt;div id="cloudflare-doh" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloudflare-doh" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;Cloudflare 提供以下公共 DNS over HTTPS 端点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;标准 DNS&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://cloudflare-dns.com/dns-query&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;https://[任意子域].cloudflare-gateway.com/dns-query&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;家庭保护 DNS&lt;/strong&gt; （拦截恶意内容和成人内容）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://family.cloudflare-dns.com/dns-query&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;https://[任意子域].family.cloudflare-dns.com/dns-query&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;安全 DNS&lt;/strong&gt; （仅拦截恶意内容）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;https://security.cloudflare-dns.com/dns-query&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;https://[任意子域].security.cloudflare-dns.com/dns-query&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 class="relative group"&gt;浏览器直接配置
+ &lt;div id="浏览器直接配置" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e6%b5%8f%e8%a7%88%e5%99%a8%e7%9b%b4%e6%8e%a5%e9%85%8d%e7%bd%ae" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;手动配置安全的DNS&lt;/p&gt;</description></item></channel></rss>

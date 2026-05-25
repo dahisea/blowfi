@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Feeling on Dahi — 開源技術與雲端基礎設施</title><link>https://dahi.icu/tags/feeling/</link><description>Recent content in Feeling on Dahi — 開源技術與雲端基礎設施</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Mon, 29 Apr 2024 12:25:34 +0000</lastBuildDate><atom:link href="https://dahi.icu/tags/feeling/index.xml" rel="self" type="application/rss+xml"/><item><title>ATRI 游玩感悟</title><link>https://dahi.icu/posts/atri-after/</link><pubDate>Mon, 29 Apr 2024 12:25:34 +0000</pubDate><guid>https://dahi.icu/posts/atri-after/</guid><description>&lt;p&gt;&lt;strong&gt;《ATRI：在沉没星球上的双重救赎》&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心剧情架构&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;双主线设计&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;采用固定选项分支的经典GAL模式&lt;/li&gt;
+&lt;li&gt;明线：人类存亡危机&lt;/li&gt;
+&lt;li&gt;暗线：人机情感救赎&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;关键结局分支&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;pre tabindex="0"&gt;&lt;code class="language-mermaid" data-lang="mermaid"&gt;graph TD
+A[对峙场景] --&amp;gt;|理性选择| B[GOOD END]
+A --&amp;gt;|情感爆发| C[BAD END]
+A --&amp;gt;|隐藏条件| D[TRUE END]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;结局解析&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;GOOD END&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;天台觉醒：ATRI情感认知突破&lt;/li&gt;
+&lt;li&gt;双重牺牲：机械躯壳留在地球 vs 人类意识飞向伊甸&lt;/li&gt;
+&lt;li&gt;意象运用：点亮的城镇=被唤醒的希望&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;BAD END&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;暴力连锁：机械臂拆卸→坠楼&lt;/li&gt;
+&lt;li&gt;哲学困境：当AI获得情感却失去生存意义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;TRUE END&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;时间魔术：60年压缩成1日的浪漫&lt;/li&gt;
+&lt;li&gt;终极悖论：用机械永恒保存人类刹那&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;角色塑造艺术&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;命名隐喻&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;亚托莉（ATRI）= 亚（始） + 夏（终）&lt;/li&gt;
+&lt;li&gt;伊甸园：既是避难所也是牢笼&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;双重创伤设定&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;夏生：生理残缺（右腿）→心理残缺（求生欲）&lt;/li&gt;
+&lt;li&gt;ATRI：程序限制（机器人三定律）→情感觉醒&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;关键情节解析&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;初始相遇的真相&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;双重自杀未遂→互相拯救&lt;/li&gt;
+&lt;li&gt;母亲临终指令的蝴蝶效应&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;情感认知曲线&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;pre tabindex="0"&gt;&lt;code class="language-mermaid" data-lang="mermaid"&gt;timeline
+ 时间轴 : 情感发展
+ 初遇 : 机械式应对
+ 相处 : 学习性模仿
+ 冲突 : &amp;#34;我讨厌现在的夏生&amp;#34;
+ 觉醒 : 泪水中确认自我&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;核心矛盾&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;表层面：拯救地球 vs 拯救AI&lt;/li&gt;
+&lt;li&gt;深层面：程序正义 vs 情感真实&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;叙事技巧分析&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

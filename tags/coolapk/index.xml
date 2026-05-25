@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Coolapk on Dahi — 開源技術與雲端基礎設施</title><link>https://dahi.icu/tags/coolapk/</link><description>Recent content in Coolapk on Dahi — 開源技術與雲端基礎設施</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Wed, 04 Jun 2025 09:25:04 +0000</lastBuildDate><atom:link href="https://dahi.icu/tags/coolapk/index.xml" rel="self" type="application/rss+xml"/><item><title>分析一个两年前发现的酷安社区漏洞，无视图片外链域限制发帖</title><link>https://dahi.icu/posts/coolapk-any-pic/</link><pubDate>Wed, 04 Jun 2025 09:25:04 +0000</pubDate><guid>https://dahi.icu/posts/coolapk-any-pic/</guid><description>&lt;h2 class="relative group"&gt;发帖原因
+ &lt;div id="发帖原因" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%8f%91%e5%b8%96%e5%8e%9f%e5%9b%a0" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;起因是我昨天在L站发帖发现引用我的图床出错了（我全站有反机器人规则）。然后突然想起来了这个酷安漏洞，&lt;strong&gt;不知道&lt;/strong&gt;现在还有没有。&lt;/p&gt;
+&lt;p&gt;由于本人之前一直活跃于水深火热，对官方乌烟瘴气的酷安社区，而酷安因为我使用插件以及利用（没干坏事）这个漏洞把我所有账号与设备全部封禁。&lt;/p&gt;
+&lt;p&gt;但是他们修复bug好像修错了（我当时用这个漏洞给酷安帖子直接引用了酷安的OSS对象存储，然后我发现没有防盗链，闲着没事直接当博客的同步图床使了…主要是我觉得同步图片挺麻烦的）。&lt;/p&gt;
+&lt;p&gt;本人态度详见&lt;strong&gt;结语&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;我无法直接与酷安官方取得联系，所以我打算公开一下。&lt;/p&gt;
+&lt;p&gt;内容具体表现概括为：一种通过&lt;strong&gt;酷安302跳转api&lt;/strong&gt;的绕过域名校验的图片引用方法&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;复现方法：
+ &lt;div id="复现方法" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%a4%8d%e7%8e%b0%e6%96%b9%e6%b3%95" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;1.发布任意带图片的动态
+2.使用抓包软件，去酷安编辑动态并抓包，找到图片部分，使用以下链接302API（我想不出为什么要设置成302，太不安全了）替换图片链接：&lt;/p&gt;
+&lt;div class="highlight-wrapper"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://coolapk.com/link?url=[图片的完整链接（URL）]&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;3.成功发布并引用外部图片
+4.等待&lt;strong&gt;号没&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 class="relative group"&gt;分析和启示
+ &lt;div id="分析和启示" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%88%86%e6%9e%90%e5%92%8c%e5%90%af%e7%a4%ba" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;酷安的防外链设置为&lt;code&gt;*.coolapk.com&lt;/code&gt;，而外链API是使用了302代码，且对站外链接处理不当。没有处理OSS敏感机密。&lt;/p&gt;
+&lt;p&gt;我们在外链跳转时应该使用严格的匹配，不随意302外链内容。我们的对象存储防盗链不应该设置为空，反代OSS时处理OSS桶的机密内容。我们的软件中的外链引用限制要保持最小化（避免泛域名这种的白名单）。&lt;/p&gt;
+
+&lt;h3 class="relative group"&gt;结语
+ &lt;div id="结语" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e7%bb%93%e8%af%ad" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;我酷安号没了，不知道酷安&lt;strong&gt;是否&lt;/strong&gt;修复了此漏洞
+不建议去拿大号试，也不要在自己登录过账号的设备试，我&lt;strong&gt;不知道&lt;/strong&gt;我的酷安账号为什么被封，是盗链酷安当图床导致可能的被他人攻击还是用插件之类的什么原因，也&lt;strong&gt;不知道&lt;/strong&gt;酷安会不会追究法律责任。这只是一个漏洞，本人不是酷安程序员，也没法对此漏洞进行修复。本人为滥用酷安外链的行为&lt;strong&gt;抱歉&lt;/strong&gt;，并且在账号被封后已经&lt;strong&gt;注销&lt;/strong&gt;酷安账号（无法联系到酷安管理员，酷安管理员不回我消息）。本人不对在酷安的行为负任何法律责任。本文仅为感想与技术交流用途，严禁恶意运用此Bug。&lt;/p&gt;</description></item></channel></rss>

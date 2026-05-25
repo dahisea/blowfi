@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tg on Dahi — 開源技術與雲端基礎設施</title><link>https://dahi.icu/tags/tg/</link><description>Recent content in Tg on Dahi — 開源技術與雲端基礎設施</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Wed, 27 Sep 2023 09:25:04 +0000</lastBuildDate><atom:link href="https://dahi.icu/tags/tg/index.xml" rel="self" type="application/rss+xml"/><item><title>Telegram 启用邮箱地址登录验证的方法</title><link>https://dahi.icu/posts/tg-email-login/</link><pubDate>Wed, 27 Sep 2023 09:25:04 +0000</pubDate><guid>https://dahi.icu/posts/tg-email-login/</guid><description>&lt;h4 class="relative group"&gt;&lt;strong&gt;1. 功能说明&lt;/strong&gt;
+ &lt;div id="1-功能说明" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-%e5%8a%9f%e8%83%bd%e8%af%b4%e6%98%8e" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h4&gt;
+&lt;p&gt;Telegram 默认使用 &lt;strong&gt;手机号码+短信验证码&lt;/strong&gt; 登入，但部分用户可能希望改用 &lt;strong&gt;电子邮件地址&lt;/strong&gt; 作为登录认证方式。 透过以下方法，可以触发Telegram的**「电子邮件验证绑定」** 选项，从而实现邮箱登入。&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;h4 class="relative group"&gt;&lt;strong&gt;2. 作步骤&lt;/strong&gt;
+ &lt;div id="2-作步骤" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#2-%e4%bd%9c%e6%ad%a5%e9%aa%a4" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h4&gt;
+
+&lt;h5 class="relative group"&gt;&lt;strong&gt;准备工作&lt;/strong&gt;
+ &lt;div id="准备工作" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;两台装置&lt;/strong&gt;（手机/电脑），均安装 &lt;strong&gt;官方版 Telegram&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;同一个手机号码&lt;/strong&gt;（用于接收验证码）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 class="relative group"&gt;&lt;strong&gt;具体流程&lt;/strong&gt;
+ &lt;div id="具体流程" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%85%b7%e4%bd%93%e6%b5%81%e7%a8%8b" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;装置A&lt;/strong&gt;：正常登录 Telegram（主帐号）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;装置B&lt;/strong&gt;：尝试登录同一个帐号，触发 &lt;strong&gt;「新装置登录」&lt;/strong&gt; 验证，通过短信登录。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在装置A 上「取消」新登入&lt;/strong&gt;（踢掉装置B）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;重复 5 次以上&lt;/strong&gt;（登入 → 踢掉 → 登入 → 踢掉）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;触发安全机制&lt;/strong&gt;：Telegram 会要求 &lt;strong&gt;「绑定电子邮件」&lt;/strong&gt; 以增强安全性。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;设定邮箱&lt;/strong&gt;：输入你的电子邮件地址，完成验证。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;之后登入&lt;/strong&gt;：可选择 &lt;strong&gt;「透过电子邮件接收验证码」&lt;/strong&gt;，不再依赖手机短信。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+
+&lt;h4 class="relative group"&gt;&lt;strong&gt;3. 注意事项&lt;/strong&gt;
+ &lt;div id="3-注意事项" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#3-%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h4&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;频繁登入可能触发限制&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

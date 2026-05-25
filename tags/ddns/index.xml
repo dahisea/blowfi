@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ddns on Dahi — 開源技術與雲端基礎設施</title><link>https://dahi.icu/tags/ddns/</link><description>Recent content in Ddns on Dahi — 開源技術與雲端基礎設施</description><generator>Hugo -- gohugo.io</generator><language>zh-TW</language><copyright>© 2026</copyright><lastBuildDate>Thu, 01 Aug 2024 10:25:04 +0000</lastBuildDate><atom:link href="https://dahi.icu/tags/ddns/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenWrt 上 Cloudflare DDNS 设置步骤教学</title><link>https://dahi.icu/posts/openwrt-cf-ddns/</link><pubDate>Thu, 01 Aug 2024 10:25:04 +0000</pubDate><guid>https://dahi.icu/posts/openwrt-cf-ddns/</guid><description>&lt;h2 class="relative group"&gt;📌 Cloudflare DDNS 设置步骤
+ &lt;div id="-cloudflare-ddns-设置步骤" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#-cloudflare-ddns-%e8%ae%be%e7%bd%ae%e6%ad%a5%e9%aa%a4" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h2&gt;
+
+&lt;h3 class="relative group"&gt;1. 检查 DDNS 服务是否支持 Cloudflare
+ &lt;div id="1-检查-ddns-服务是否支持-cloudflare" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-%e6%a3%80%e6%9f%a5-ddns-%e6%9c%8d%e5%8a%a1%e6%98%af%e5%90%a6%e6%94%af%e6%8c%81-cloudflare" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;在 OpenWrt 的 DDNS 设置中，确认是否有「cloudflare.com-v4」选项：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ fetchpriority="low"
+ alt="DDNS 服务列表"
+ src="https://p.yu.ac.cn/pic/Screenshot_20240802-183356.png"
+ &gt;&lt;/figure&gt;
+
+&lt;figure&gt;&lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ fetchpriority="low"
+ alt="DDNS 服务选项"
+ src="https://p.yu.ac.cn/pic/Screenshot_20240802-183347.png"
+ &gt;&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;h3 class="relative group"&gt;2. 在Cloudflare建立DNS记录
+ &lt;div id="2-在cloudflare建立dns记录" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#2-%e5%9c%a8cloudflare%e5%bb%ba%e7%ab%8bdns%e8%ae%b0%e5%bd%95" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;登入 Cloudflare 控制台&lt;/li&gt;
+&lt;li&gt;为你的域添加一笔 DNS 记录：
+&lt;ul&gt;
+&lt;li&gt;IPv4 请选择 A」记录&lt;/li&gt;
+&lt;li&gt;IPv6 请选择「AAAA」记录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;记录值可先随意设定，稍后会自动更新&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 class="relative group"&gt;3. 建立 Cloudflare API Token
+ &lt;div id="3-建立-cloudflare-api-token" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#3-%e5%bb%ba%e7%ab%8b-cloudflare-api-token" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;前往 [Cloudflare API Tokens 页面]（https://dash.cloudflare.com/profile/api-tokens）&lt;/li&gt;
+&lt;li&gt;选择「Create Token」→「Create custom token」&lt;/li&gt;
+&lt;li&gt;设定权限：
+&lt;ul&gt;
+&lt;li&gt;权限类型：Zone&lt;/li&gt;
+&lt;li&gt;权限设置：DNS → Edit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;建立并妥善保存 Token&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 class="relative group"&gt;4. OpenWrt DDNS 模块设置
+ &lt;div id="4-openwrt-ddns-模块设置" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#4-openwrt-ddns-%e6%a8%a1%e5%9d%97%e8%ae%be%e7%bd%ae" aria-label="定位點"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ fetchpriority="low"
+ alt="OpenWrt DDNS 设置画面"
+ src="https://p.yu.ac.cn/pic/Screenshot_20240802-194810~2.png"
+ &gt;&lt;/figure&gt;
+
+看着办吧，以上要注意。 密码就是你的token。
+&lt;figure&gt;&lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ fetchpriority="low"
+ alt="设定成功画面"
+ src="https://p.yu.ac.cn/pic/Screenshot_20240802-195526.png"
+ &gt;&lt;/figure&gt;
+&lt;/p&gt;</description></item></channel></rss>
